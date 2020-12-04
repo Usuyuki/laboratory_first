@@ -1,0 +1,78 @@
+.sm-view {
+  display: none;
+}
+.pc-view {
+  text-align: center;
+  display: grid;
+  /* grid-template:
+    "... ..... ..... ..... ..... ..... ..."
+    "... header header header header header ..." 150px
+    "... ..... ..... ..... ..... ..... ..." 3px
+    "... left ..... center ..... right ..." 1fr
+    "... ..... ..... ..... ..... ..... ..." 3px
+    " ...footer footer footer footer footer ..." 300px
+    "... ..... ..... ..... ..... ..... ..."
+    / auto 150px 10px minmax(300px, 1fr) 10px 200px auto; */
+  grid-template:
+    "footer footer footer"
+    "center1 center1 center1"
+    "center1 center1 center1"
+    "center2 center2 center2"
+    "center3 center3 center3"
+    "footer footer footer";
+  /* 要素間の余白 */
+  /* gap: 10px; */
+  /* 1fr→画面いっぱい */
+}
+div :not(header):not(footer) {
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+  text-orientation: upright; /* すべて縦方向に表示 */
+}
+@media screen and (max-width: 1000px) {
+  .pc-view {
+    display: none;
+  }
+  .sm-view {
+    text-align: center;
+    display: inline;
+    margin: 10px 10px;
+  }
+}
+
+header {
+  grid-area: header;
+  border: 1px solid black;
+}
+
+.center1 {
+  grid-area: center1;
+  border: 1px solid black;
+}
+
+.center2 {
+  grid-area: center2;
+  border: 1px solid black;
+}
+
+.center3 {
+  grid-area: center3;
+  border: 1px solid black;
+}
+nav {
+  grid-area: left;
+  border: 1px solid black;
+}
+
+aside {
+  grid-area: right;
+  border: 1px solid black;
+}
+
+footer {
+  grid-area: footer;
+  border: 1px solid black;
+}
+.title {
+  grid-area: title;
+}
