@@ -13,6 +13,36 @@
         <p>このページはPCでのみのレイアウトを想定しております。<br>大変申し訳ありませんがスマートフォンなどではご覧になれません。<br> <a
                 href="https://usuyuki.github.io/laboratory_one/">ホームへ戻る</a></p>
     </div>
+    <article>
+        <p>小学生の頃、新聞を作る課題ってありませんでしたでしょうか。私はありました。それを思い出して…</p>
+        <h3>CSSのグリッドレイアウトを用いて新聞風なデザインをしてみました。</h3>
+        <p>CSSのグリッドレイアウトとは、</p>
+        <div class="code">
+            <code>
+
+                display: grid;<br>
+                grid-template:<br>
+                "... ..... ..... ..... ..... ..... ..... ..."<br>
+                "... header header header header header header ..." 30px<br>
+                "... center2 center1 center1 center1 center1 title ..." 300px<br>
+                "... center2 center1 center1 center1 center1 title ..." 100px<br>
+                "... center2 center1 center1 center1 center1 title-sub ..." 150px<br>
+                "... center3 center3 center3 center3 center3 center3 ..." 300px<br>
+                "... center4 center4 center7 center5 center5 center5 ..." 150px<br>
+                "... center4 center4 center6 center6 center6 center6 ..." 150px<br>
+                "... add1 add2 add2 add3 add4 add4 ..." 300px<br>
+                " ...footer footer footer footer footer footer ..." 30px<br>
+                "... ..... ..... ..... ..... ..... ..... ..." 30px<br>
+                / auto 300px 300px 300px minmax(300px, 2000px) 100px 100px auto;<br>
+            </code>
+        </div>
+        <p>上記のような可読性の高いコードをCSSに記載するだけでレイアウトが組める機能です。<br>従来のFlexBoxなどと比べタグの数を大幅に減らせます。<br>また以下の例では行っておりませんが、容易にレスポンシブデザインにすることも可能とのことです。<br>InternetExploreを除くほとんどブラウザに対応しています。
+        </p>
+        <p>　</p>
+        <p>↓以下は最近の私の話題を新聞風にして、実装してみたものになります。↓</p>
+        <p style="font-size: 0.7em;">※画面サイズに応じて文字が飛びてしまう点、書くことがないという点を踏まえ文字には余白をもたせています。</p>
+
+    </article>
     <div class="pc-view">
 
         <header>
@@ -23,7 +53,7 @@
             <span style="font-size:1em;">(令和2年)</span>
             <span style="font-size:1em;font-weight: bold;margin-right: 5em;">12月5日(土曜日)</span>
             <span style="letter-spacing: 2em;margin-right: 4em;font-size: 1.5em;">新聞風新聞</span>
-            <span style="font-size: 0.5em;margin-left: 60em;">(第3種郵便物不認可)</span>
+            <span style="font-size: 0.5em;margin-left: 10em;">(第3種郵便物不認可)</span>
 
         </header>
         <div class="title">
@@ -33,31 +63,40 @@
             <p>2020年<br>(令和2年)<br>12月5日(土)<br>なんでも無い日</p>
         </div>
         <div class="center1">
-            <h2>今月のガス代が判明</h2>
-            <p>2日午前9時、今月のガス代を示す請求明細書が届いた。毎月一定額を保ち続けていたガス代であったが、今月急激な上昇が見られた。関係者への取材によると先月は連日お湯を張っていたことが分かり、「この時期になると湯船に浸かりたくなる。大きな反省点だ」と心境を述べた。
+            <h2>今月のガス代　判明</h2>
+            <p>　2日午前9時、今月のガス代を示す請求明細書が届いた。毎月一定額を保ち続けていたガス代であったが、今月急激な上昇が見られた。関係者への取材によると先月は連日お湯を張っていたことが分かり、「この時期になると湯船に浸かりたくなる。大きな反省点だ」と心境を述べた。
             </p>
         </div>
         <div class="center2">
             <h2>UberEatsのアプリをダウンロード</h2>
-            <p>関係者らへの取材によると昨日、UberEatsのアプリをダウンロードしたことが判明した。UberEatsとは</p>
+            <p>　関係者らへの取材によると昨日、UberEatsのアプリをダウンロードしたことが判明した。UberEatsとは手数料などを払うことで自宅など指定の場所へ食事を運んでくれるサービスのことで近年話題を呼んでいる。
+                宇都宮市でも一部地域でサービスが提供されており、新しいサービスに目がない筆者はダウンロードを開始した。しかしながら想像以上の価格の高さから購入を断念し、結果としてアプリだけがスマートフォンに残る形となった。
+            </p>
         </div>
         <div class="center3">
-            <h2>珈琲の供給がストップ</h2>
+            <h2>消耗品の備蓄始まる</h2>
+            <p>　本格的な冬の寒さを前にして、各種消耗品の備蓄が行われた。米Amazon社によるサイバーマンデーとも重なり、比較的安価に商品を購入できたと関係者らは述べている。このことについて自身は「消耗品が無くなっていないかを気にして脳を無駄に使うことが減った」と胸の内を語った。
+                シャンプーやボディーソープなどを購入し、半年は購入の必要がないと想定されている。</p>
 
         </div>
         <div class="center4">
-            <h2>珈琲　慢性的な不足</h2>
-
+            <h2>朝御飯　どうする？</h2>
+            <p>　近年話題となっているプチ断食を受け、朝御飯を省くファスティングの実施に踏み切った。これを行なうことにより日中の眠気の防止や専門家らの意見によると朝にバターコーヒーを飲むことがよいとされている。また従来までの1日3食は時代にそぐわないとの意見も散見された。<br>　朝御飯を摂らないことで、朝食選びをしなくても良いという恩恵が得られている一方で途中空腹に耐えかねて間食をとってしまい、結果として意味がない現状となっていることも事実である。
+            </p>
         </div>
         <div class="center5">
             <h2>餅 購入</h2>
-            <p>昨日スーパーを訪れた際、割引のポップに気を取られてしまい、一人暮らしにも関わらず1kgの餅を購入した。餅は鍋に入れる際に大変有意義ではあるものの、我が家の貯蓄スペーズを圧迫しており、購入者は反省の色を示している。
+            <p>　昨日スーパーを訪れた際、割引のポップに気を取られてしまい、一人暮らしにも関わらず誤って大容量1kgの餅を購入した。餅は鍋に入れる際に大変有意義ではあるものの、我が家の貯蓄スペーズを圧迫しており、購入者は反省の色を示している。
             </p>
         </div>
         <div class="center6">
             <h2>実家帰省</h2>
-            <p>今月26日から予定されている実家への帰省について慎重な態度を示していることが4日の記者会見で判明した。東京都によるGoToトラベル自粛要請を受け、帰路に東京都が含まれることから、場合によっては中止も止むをえないとのことである。
+            <p>　今月26日から予定されている実家への帰省について慎重な態度を示していることが4日の記者会見で判明した。東京都によるGoToトラベル自粛要請を受け、帰路に東京都が含まれることから、場合によっては中止も止むをえないとのことである。
             </p>
+        </div>
+        <div class="center7">
+            <h2>暖房器具</h2>
+            <p>筆者は今年の冬はエアコンのみで乗り切ると昨夜未明告白した。決定理由は明かされていない。</p>
         </div>
         <div class="add1">
             <h1 style="font-weight: bold;font-size: 1.5em;color: white;">帰りたい、家がある。</h1>
@@ -66,24 +105,35 @@
 
         </div>
         <div class="add2">
-            <p>待望のベストセラー！</p>
+            <h4>第二百四十九回記念写真展</h4>
+            <p>美しい写真をお楽しみください。</p>
+            <p>会場は<br>　北緯20度25分31秒<br>　東経136度4分11秒</p>
+            <p style="text-align: right;">となります。</p>
             <div class="fit">
-
-                <img src="/img/gridSysAdd2.jpg" class="sirokuro img-fit">
+                <img src="../..//img/gridSysAdd4.jpg" class="sirokuro img-fit">
             </div>
 
         </div>
         <div class="add3">
-            喫茶「うぇるかむ かもーん」
-
+            <h2>名著「早起きの極意」</h2>
+            <h2 style="text-align: right;">再販決定！</h2>
+            <img src="../..//img/gridStysAdd3.png" class="sirokuro img-fit-2">
+            <div style="margin-top:1.5em">
+                <p style="text-align: left;">
+                    プロ直伝による早起きの極意が詰まった名著が再び。あなたも寝坊が限りなく0に近い朝を過ごしてみませんか？本格的な冬を前に購入をご検討ください！<br>プレゼントにも最適です。</p>
+                <p style="text-align: right;"> お近くの書店にてお求めください</p>
+            </div>
+            <p style="text-align: right;">定価2490円+税</p>
         </div>
         <div class="add4">
             <h2>守りたい、この笑顔</h2>
+            <p style="font-size:0.9em">私達はスマートホーム化を応援します</p>
+            <p style="text-align: right;">有限会社　〇〇</p>
         </div>
-
-        <footer>
-            copyright 2020 usuyuki
-        </footer>
+    </div>
+    <footer>
+        copyright 2020 usuyuki
+    </footer>
     </div>
 </body>
 

@@ -6,21 +6,20 @@ a {
   color: black;
 }
 .pc-view {
+  background-color: #f2f2f2;
   text-align: center;
   display: grid;
   grid-template:
-    "... ..... ..... ..... ..... .....  ..."
-    "... header header header header header  ..." 30px
-    "... center2 center2 center1 center1  title ..." 300px
-    "... center2 center2 center1 center1  title ..." 100px
-    "... center2 center2 center1 center1  title-sub ..." 150px
-    "... center3 center3 center3 center3 center3 ..." 300px
-    "... center4 center4 center5 center5 center5 ..." 150px
-    "... center4 center4 center6 center6 center6 ..." 150px
-    "... add1 add2  add2  add3  add4 ..." 300px
-    " ...footer footer footer footer footer ..." 30px
-    "... ..... .....  ..... ..... ..... ..." 30px
-    / auto 300px 300px 300px minmax(300px, 2000px) 100px auto;
+    "... ..... ..... ..... ..... .....  ..... ..."
+    "... header header header header header  header ..." 30px
+    "... center2 center1 center1 center1  center1 title ..." 300px
+    "... center2 center1 center1 center1  center1 title ..." 100px
+    "... center2 center1 center1 center1  center1 title-sub ..." 150px
+    "... center3 center3 center3 center3 center3 center3 ..." 300px
+    "... center4 center4 center7 center5 center5 center5 ..." 150px
+    "... center4 center4 center6 center6 center6 center6 ..." 150px
+    "... add1 add2  add2  add3  add4 add4 ..." 300px
+    / auto 300px 300px 300px minmax(300px, 2000px) 100px 100px auto;
 }
 
 .pc-view > div {
@@ -34,6 +33,9 @@ a {
 
 @media screen and (max-width: 1000px) {
   .pc-view {
+    display: none;
+  }
+  article {
     display: none;
   }
   .sm-view {
@@ -102,22 +104,39 @@ header {
   grid-area: center6;
   border: 1px solid black;
 }
+.center7 {
+  grid-area: center7;
+  border: 1px solid black;
+}
 .add1 {
-  background-image: url(/img/gridSysAdd2.jpg);
+  background-image: url(../../img/gridSysAdd2.jpg);
   grid-area: add1;
   border: 1px solid black;
 }
 .add2 {
   grid-area: add2;
   border: 1px solid black;
+  /* 背景作り */
+  background-image: repeating-linear-gradient(
+      0deg,
+      rgba(150 150 150 / 0.3) 0px 10px,
+      rgba(0 0 0 / 0) 10px 20px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(180 180 180 /0.3) 0px 10px,
+      rgba(0 0 0 / 0) 10px 20px
+    );
 }
 .add3 {
   grid-area: add3;
   border: 1px solid black;
+  background-image: repeating-linear-gradient(#ccc 30%, rgba(0 0 0 / 0) 31%);
 }
 .add4 {
   grid-area: add4;
   border: 1px solid black;
+  background-color: #b8b8b8;
 }
 
 .title {
@@ -152,6 +171,7 @@ aside {
 footer {
   grid-area: footer;
   border: 1px solid black;
+  text-align: right;
 }
 .title {
   grid-area: title;
@@ -168,6 +188,12 @@ footer {
   /* height: 100%; */
   object-fit: cover;
 }
+.img-fit-2 {
+  /* width: 70%; */
+  height: 80%;
+  object-fit: cover;
+  margin-top: 2em;
+}
 .img-cut {
   overflow: hidden;
   width: 100%; /* トリミングしたい枠の幅 */
@@ -182,4 +208,20 @@ footer {
   height: 80%;
   margin: 0 auto;
   padding: 5% 5%;
+}
+/* 記事タイトルを中央に */
+h2 {
+  text-align: center;
+}
+
+.code {
+  border: 1px solid black;
+  padding: 1em 1em;
+  width: 50%;
+  margin: 1% auto;
+  text-align: initial;
+}
+article {
+  text-align: center;
+  margin-bottom: 3%;
 }
