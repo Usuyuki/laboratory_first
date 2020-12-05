@@ -9,21 +9,27 @@ a {
   text-align: center;
   display: grid;
   grid-template:
-    "... ..... ..... ..... ..... ..... ..."
-    "... header header header header header ..." 30px
-    "... center2 ..... center1 ..... title ..." 1fr
-    "... center2 ..... center1 ..... title ..." 1fr
-    "... center3 center3 center3 center3 center3 ..." 1fr
-    "... add1 ..... add2 ..... add3 ..." 300px
+    "... ..... ..... ..... ..... .....  ..."
+    "... header header header header header  ..." 30px
+    "... center2 center2 center1 center1  title ..." 300px
+    "... center2 center2 center1 center1  title ..." 100px
+    "... center2 center2 center1 center1  title-sub ..." 150px
+    "... center3 center3 center3 center3 center3 ..." 300px
+    "... center4 center4 center5 center5 center5 ..." 150px
+    "... center4 center4 center6 center6 center6 ..." 150px
+    "... add1 add2  add2  add3  add4 ..." 300px
     " ...footer footer footer footer footer ..." 30px
-    "... ..... ..... ..... ..... ..... ..." 30px
-    / auto 300px 0px minmax(300px, 2000px) 0px 100px auto;
+    "... ..... .....  ..... ..... ..... ..." 30px
+    / auto 300px 300px 300px minmax(300px, 2000px) 100px auto;
 }
 
 .pc-view > div {
   -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl;
   text-orientation: upright; /* すべて縦方向に表示 */
+  /* 上に揃える */
+  text-align: left;
+  padding: 1em 1em;
 }
 
 @media screen and (max-width: 1000px) {
@@ -53,18 +59,47 @@ header {
   border: 1px solid black;
   text-align: left;
 }
+.title-sub {
+  grid-area: title-sub;
+  border: 1px solid black;
+}
+.title-sub p {
+  -ms-writing-mode: initial;
+  writing-mode: initial;
+  text-orientation: initial;
+  font-size: 80%;
+
+  /* 下記3行で上下左右揃え */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .center1 {
   grid-area: center1;
   border: 1px solid black;
 }
-
+.center1 p {
+  align-items: initial;
+}
 .center2 {
   grid-area: center2;
   border: 1px solid black;
 }
 .center3 {
   grid-area: center3;
+  border: 1px solid black;
+}
+.center4 {
+  grid-area: center4;
+  border: 1px solid black;
+}
+.center5 {
+  grid-area: center5;
+  border: 1px solid black;
+}
+.center6 {
+  grid-area: center6;
   border: 1px solid black;
 }
 .add1 {
@@ -78,6 +113,10 @@ header {
 }
 .add3 {
   grid-area: add3;
+  border: 1px solid black;
+}
+.add4 {
+  grid-area: add4;
   border: 1px solid black;
 }
 
@@ -125,8 +164,8 @@ footer {
 
 /* 画像を収める */
 .img-fit {
-  width: 100%;
-  height: 100%;
+  width: 70%;
+  /* height: 100%; */
   object-fit: cover;
 }
 .img-cut {
@@ -137,4 +176,10 @@ footer {
 }
 .pad {
   padding: 1px 1px 1px 1px;
+}
+.fit {
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+  padding: 5% 5%;
 }
