@@ -1,34 +1,31 @@
 .sm-view {
   display: none;
 }
+a {
+  text-decoration: none;
+  color: black;
+}
 .pc-view {
   text-align: center;
   display: grid;
-  /* grid-template:
-    "... ..... ..... ..... ..... ..... ..."
-    "... header header header header header ..." 150px
-    "... ..... ..... ..... ..... ..... ..." 3px
-    "... left ..... center ..... right ..." 1fr
-    "... ..... ..... ..... ..... ..... ..." 3px
-    " ...footer footer footer footer footer ..." 300px
-    "... ..... ..... ..... ..... ..... ..."
-    / auto 150px 10px minmax(300px, 1fr) 10px 200px auto; */
   grid-template:
-    "footer footer footer"
-    "center1 center1 center1"
-    "center1 center1 center1"
-    "center2 center2 center2"
-    "center3 center3 center3"
-    "footer footer footer";
-  /* 要素間の余白 */
-  /* gap: 10px; */
-  /* 1fr→画面いっぱい */
+    "... ..... ..... ..... ..... ..... ..."
+    "... header header header header header ..." 30px
+    "... center2 ..... center1 ..... title ..." 1fr
+    "... center2 ..... center1 ..... title ..." 1fr
+    "... center3 center3 center3 center3 center3 ..." 1fr
+    "... add1 ..... add2 ..... add3 ..." 300px
+    " ...footer footer footer footer footer ..." 30px
+    "... ..... ..... ..... ..... ..... ..." 30px
+    / auto 300px 0px minmax(300px, 2000px) 0px 100px auto;
 }
-div :not(header):not(footer) {
+
+.pc-view > div {
   -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl;
   text-orientation: upright; /* すべて縦方向に表示 */
 }
+
 @media screen and (max-width: 1000px) {
   .pc-view {
     display: none;
@@ -39,10 +36,22 @@ div :not(header):not(footer) {
     margin: 10px 10px;
   }
 }
+/* 縦書きリセット */
+.reset {
+  -ms-writing-mode: initial;
+  writing-mode: initial;
+  text-orientation: initial;
+}
+.border {
+  border: 1px solid white;
+  border-radius: 2em;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
 header {
   grid-area: header;
   border: 1px solid black;
+  text-align: left;
 }
 
 .center1 {
@@ -54,10 +63,42 @@ header {
   grid-area: center2;
   border: 1px solid black;
 }
-
 .center3 {
   grid-area: center3;
   border: 1px solid black;
+}
+.add1 {
+  background-image: url(/img/gridSysAdd2.jpg);
+  grid-area: add1;
+  border: 1px solid black;
+}
+.add2 {
+  grid-area: add2;
+  border: 1px solid black;
+}
+.add3 {
+  grid-area: add3;
+  border: 1px solid black;
+}
+
+.title {
+  grid-area: title;
+  border: 1px solid black;
+  text-align: center;
+  letter-spacing: 2em;
+  /* 下記3行で上下左右揃え */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* 背景作り */
+  background-image: repeating-linear-gradient(
+    45deg,
+    #ccc,
+    #ccc 5px,
+    rgba(0 0 0 / 0) 0,
+    rgba(0 0 0 / 0) 10px
+  );
 }
 nav {
   grid-area: left;
@@ -75,4 +116,25 @@ footer {
 }
 .title {
   grid-area: title;
+}
+
+/* 画像白黒化 */
+.sirokuro {
+  filter: grayscale(100%);
+}
+
+/* 画像を収める */
+.img-fit {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.img-cut {
+  overflow: hidden;
+  width: 100%; /* トリミングしたい枠の幅 */
+  height: auto; /* トリミングしたい枠の高さ */
+  position: relative;
+}
+.pad {
+  padding: 1px 1px 1px 1px;
 }
