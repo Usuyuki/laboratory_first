@@ -8,39 +8,137 @@
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
+    <link rel="icon" href="./favicon.ico">
 </head>
 
 <body>
 
-    <header>
-        <h1 class="text-6xl text-center">Hello World.</h1>
+    <header class="border-b-2 relative">
+        <h1 class="text-4xl text-center ">色々置き場</h1>
     </header>
     <main class="main">
-        <h1>リンク先</h1>
-        <div class="link-list">
-            <a href="./design/grid/grid-system.html">CSSのグリッドレイアウトで新聞を作る(PCのみ)</a>
+        <!-- リンクココから -->
+        <h1 class="text-lg font-bold text-center m-4">リンク先</h1>
+
+        <div class="info flex m-auto flex-row justify-center">
+
+
+            <!-- カードここから -->
+            <div class="bg-white shadow p-3 rounded lg:w-64 m-4">
+                <a href="./design/grid/grid-system.html">
+                    <div>
+                        <div style="background-image: url('./img/exIndexGrid.jpg')"
+                            class="bg-cover bg-center bg-gray-300 h-32 rounded">
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <p class="text-lg text-bold tracking-wide text-gray-600 mb-2 text-center">
+                            グリッドレイアウト
+                        </p>
+                        <p class="text-sm text-gray-600 font-hairline">
+                            CSSのグリッドレイアウトで新聞を作ってみました(PCのみ)
+                        </p>
+                    </div>
+                    <div class="mt-6">
+                        <p
+                            class="border bg-blue-500 text-white rounded-md px-auto text-center py-2 m-2 transition duration-500 ease select-none">
+                            CSS
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <!-- カードここまで -->
+
+            <!-- カードここから -->
+            <div class="bg-white shadow p-3 rounded lg:w-64 m-4">
+                <a href="./design/grid/grid-system.html">
+                    <div>
+                        <div style="background-image: url('')" class="bg-cover bg-center bg-gray-300 h-32 rounded">
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <p class="text-lg text-bold tracking-wide text-gray-600 mb-2 text-center">
+                            準備中
+                        </p>
+                        <p class="text-sm text-gray-600 font-hairline">
+                            CSSのアニメーションで遊んでみたいです
+                        </p>
+                    </div>
+                    <div class="mt-6">
+                        <p
+                            class="border bg-blue-500 text-white rounded-md px-auto text-center py-2 m-2 transition duration-500 ease select-none">
+                            CSS
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <!-- カードここまで -->
+
         </div>
-        <div class="info">
-            <h1>技術</h1>
-            <article>
-                <section>
-                    <h1>インフラ</h1>
-                    <p>GitHubPages</p>
-                </section>
-                <section>
-                    <h1>CSSライブラリ</h1>
-                    <p>TailwindCSS</p>
-                </section>
-                <section>
-                    <h1>言語</h1>
-                    <p>HTML,CSS,JavaScript</p>
-                </section>
-            </article>
+        <!-- リンクココまで -->
+
+
+        <!-- 技術ココから -->
+        <h1 class="text-center m-2 text-xl font-bold">技術</h1>
+        <div class="info flex  mx-auto justify-center">
+            <!-- カードここから -->
+            <div class="rounded h-full flex justify-center items-center m-4">
+                <div class="rounded bg-white shadow-md h-48 w-48 p-6 flex flex-col justify-around">
+                    <div>
+                        <p class="text-base text-gray-600">インフラ</p>
+                    </div>
+                    <div>
+                        <p class="text-2xl text-gray-700 font-bold">GitHubPages</p>
+                    </div>
+                    <div class="text-sm">
+                        <p class="text-gray-600">手間を掛けたくなくてこちらを選びました。</p>
+                    </div>
+                </div>
+            </div>
+            <!-- カードここまで -->
+
+            <!-- カードここから -->
+            <div class="rounded h-full flex justify-center items-center m-4">
+                <div class="rounded bg-white shadow-md h-48 w-48 p-6 flex flex-col justify-around">
+                    <div>
+                        <p class="text-base text-gray-600">CSSライブラリ</p>
+                    </div>
+                    <div>
+                        <p class="text-2xl text-gray-700 font-bold">TailwindCSS</p>
+                    </div>
+                    <div class="text-sm">
+                        <p class="text-gray-600">実験的にメインページのみで使用しています。</p>
+                    </div>
+                </div>
+            </div>
+            <!-- カードここまで -->
+
+            <!-- カードここから -->
+            <div class="rounded h-full flex justify-center items-center m-4">
+                <div class="rounded bg-white shadow-md h-48 w-48 p-6 flex flex-col justify-around">
+                    <div>
+                        <p class="text-base text-gray-600">言語</p>
+                    </div>
+                    <div>
+                        <p class="text-2xl text-gray-700 font-bold">HTML,CSS,JS</p>
+                    </div>
+                    <div class="text-sm">
+                        <p class="text-gray-600">フレームワークなどは使用していません</p>
+                    </div>
+                </div>
+            </div>
+            <!-- カードここまで -->
+
         </div>
-        <footer>
-            <p>copyright 2020 usuyuki</p>
-        </footer>
+
+        <!-- 技術ココまで -->
+
+
     </main>
+
+    <footer class="border-t-2">
+        <p class="text-center">copyright 2020 usuyuki</p>
+    </footer>
 </body>
 
 </html>
