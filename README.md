@@ -12,8 +12,9 @@
   - フレームワークの試験的な使用
 
 ## 使用技術
+
 ページ|インフラ|CSSライブラリ|アイコン
--|-|-
+-|-|-|-
 index.html|GitHubPages|TailwindCSS|FontAwsome
 
 ## 言語
