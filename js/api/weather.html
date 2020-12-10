@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- tailwindcss読み込み -->
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <!-- font awsome読み込み -->
+    <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
+    <title>てるてる</title>
+</head>
+
+<body>
+    <input type="button" id="test" value="テスト" class="mx-auto text-center" onclick="test_click()">
+    <!-- お天気カードココから -->
+    <h1 class="text-center m-2 text-xl font-bold">お天気カード</h1>
+    <div class="info flex  mx-auto justify-center flex-wrap">
+        <!-- カードここから -->
+        <div class="rounded h-full flex justify-center items-center m-4">
+            <div class="rounded bg-white shadow-md h-48 w-48 p-6 flex flex-col justify-around" id="yahoo">
+                <div>
+                    <p class="text-base text-gray-600">Yahoo</p>
+                </div>
+                <div>
+                    <p class="text-2xl text-gray-700 font-bold " id="yahooRainfall"></p>
+                </div>
+                <div class="text-sm">
+                    <p class="text-gray-600" id="yahooPlace"></p>
+                </div>
+            </div>
+        </div>
+        <!-- カードここまで -->
+
+        <!-- カードここから -->
+        <div class="rounded h-full flex justify-center items-center m-4">
+            <div class="rounded bg-white shadow-md h-48 w-48 p-6 flex flex-col justify-around">
+                <div>
+                    <p class="text-base text-gray-600">WeatherNews</p>
+                </div>
+                <div>
+                    <p class="text-2xl text-gray-700 font-bold">TailwindCSS</p>
+                </div>
+                <div class="text-sm">
+                    <p class="text-gray-600">実験的にメインページのみで使用しています。</p>
+                </div>
+            </div>
+        </div>
+        <!-- カードここまで -->
+
+        <!-- カードここから -->
+        <div class="rounded h-full flex justify-center items-center m-4">
+            <div class="rounded bg-white shadow-md h-48 w-48 p-6 flex flex-col justify-around">
+                <div>
+                    <p class="text-base text-gray-600">SmartNews</p>
+                </div>
+                <div>
+                    <p class="text-2xl text-gray-700 font-bold">HTML,CSS,JS</p>
+                </div>
+                <div class="text-sm">
+                    <p class="text-gray-600">ライブラリなども使用しています</p>
+                </div>
+            </div>
+        </div>
+        <!-- カードここまで -->
+
+        <!-- カードここから -->
+        <div class="rounded h-full flex justify-center items-center m-4">
+            <div class="rounded bg-white shadow-md h-48 w-48 p-6 flex flex-col justify-around">
+                <div>
+                    <p class="text-base text-gray-600">アイコン</p>
+                </div>
+                <div>
+                    <p class="text-2xl text-gray-700 font-bold">Font Awesome</p>
+                </div>
+                <div class="text-sm">
+                    <p class="text-gray-600">素敵なアイコンを選びました</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- カードここまで -->
+
+
+    <h3>fetchテスト</h3>
+
+    <div class="text-center ">
+        <h1 class="font-bold">各種クレジット</h1>
+        <p>Webサービス by Yahoo! JAPAN （https://developer.yahoo.co.jp/about）</p>
+    </div>
+    <!-- お天気カードココまで -->
+    <script src="weather.js"></script>
+
+</body>
+
+</html>
