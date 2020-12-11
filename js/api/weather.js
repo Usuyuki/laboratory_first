@@ -20,7 +20,7 @@ const latitude=36.549710;//緯度
 function getWeather() {
     getYahooWeather();
     getOpenWeatherMap();
-
+    getMeteorologicalAgency();
 };
 
 
@@ -32,14 +32,10 @@ function getYahooWeather(){
 
     fetch(url).then(response=>response.json()
     ).then(data =>{
-        console.log(data);
+        // console.log(data);
         var nameValue=data['Feature'][0]['Name']
         var rainfallValue=data['Feature'][0]['Property']['WeatherList']['Weather'][2]['Rainfall']
         var dataValue=data['Feature'][0]['Property']['WeatherList']['Weather'][2]['Date']
-        // var tempValue=data['Property']['WeatherList']['Weather']
-        // var descValue=data['weather'][0]['description']
- 
-      
         yahooDate.innerHTML =dataValue.substr( -4,2 )+"時"+dataValue.substr( -2 )+"分"+"の予想降水量";
   
         // temp.innerHTML =tempValue;
@@ -72,14 +68,26 @@ function getOpenWeatherMap(){
     const url ="http://api.openweathermap.org/data/2.5/forecast?lat="+latitude+"&lon="+longitude+"&APPID=5366a31f43daa2a39126dea4dfd57fa2";
     fetch(url).then(response=>response.json()
     ).then(data =>{
-        console.log(data);
+        // console.log(data);
         openWeatherDate.innerHTML=data.list[3].dt_txt+"の予想天気模様";
         openWeatherIcon=data.list[3].weather[0].icon;
-        openWeatherRainfall.innerHTML=data.list[3].weather[0].description+"<img src='http://openweathermap.org/img/wn/"+openWeatherIcon+".png'>";
+        openWeatherForcast.innerHTML=data.list[3].weather[0].description+"<img src='http://openweathermap.org/img/wn/"+openWeatherIcon+".png'>";
     }
     );
 }
+function getMeteorologicalAgency(){
+    
+    const url ="https://weather.tsukumijima.net/api/forecast/city/090010";
+    fetch(url).then(response=>response.json()
+    ).then(data =>{
+        console.log(data);
+        MeteorologicalAgencyDate.innerHTML=data.forecasts[1].date+"の予想天気模様";
+        MeteorologicalAgencyIcon=data.forecasts[1].image.url;
+        MeteorologicalAgencyForecast.innerHTML=data.forecasts[1].image.title+"<img src='"+MeteorologicalAgencyIcon+"'>";
+    }
+    );
 
+}
 
 //最低気温と最高気温取得
 function getTemp(){

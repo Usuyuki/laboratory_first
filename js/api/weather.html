@@ -9,28 +9,45 @@
     <!-- font awsome読み込み -->
     <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
     <title>てるてる</title>
+    <style>
+        input {
+            background-image: url(hogehoge);
+            padding-left: 16px
+                /* 貼る画像によって可変 */
+        }
+    </style>
 </head>
 
 <body>
-    <h1 class="text-center m-2 text-3xl font-bold border-b-2 mb-3">天気情報まとめサイト「てるてる」</h1>
+    <h1 class="text-center m-2 text-3xl font-bold border-b-2 mb-3 mx-10">天気情報まとめサイト「てるてる」</h1>
 
     <div class="">
-        <h1 class="text-center text-xl font-bold">-このサイトについて-</h1>
+        <h1 class="text-center text-xl font-bold">
+            -このサイトについて-</h1>
         <p class="text-center my-3">
             気象業務法により日本で天気予報を行なうには許可が必要です。<br>本サイトでは許可を受けた事業者が観測・予測したデータを取得して表示しているにすぎず、法律違反には該当しません！！
         </p>
     </div>
+    <h1 class="text-center m-2 text-lg font-bold mt-16">お天気カード</h1>
+    <h1 class="text-center m-2 text-sm font-bold">本日(<span id="today"></span>)の宇都宮市の天気予報</h1>
     <div class="flex justify-center">
 
-        <input type="button" id="test" value="天気情報取得"
-            class="border-blue-200 border-2 bg-white hover:border-blue-500 text-gray-600 px-4 py-4 rounded select-none w-30 mx-auto text-center font-bold text-lg"
-            onclick="getWeather()">
+
+
+        <button onclick="getWeather()" class=" border-blue-200 border-2 bg-white hover:border-blue-500 text-gray-600 mx-30 py-3 rounded select-none
+            mx-auto text-center font-bold text-lg ">
+
+            <img src="../..//img/js/teruteru2.png" class="object-contain h-8 w-full">
+            <p class="">天気取得</p>
+        </button>
+
+
+
+
     </div>
-    <h1 class="text-center m-2 text-lg font-bold">お天気カード</h1>
-    <h1 class="text-center m-2 text-sm font-bold">本日(<span id="today"></span>)の宇都宮市の天気予報</h1>
     <!-- お天気カードココから -->
 
-    <div class="info flex  mx-auto justify-center flex-wrap">
+    <div class=" info flex mx-auto justify-center flex-wrap">
         <!-- カードここから -->
         <div class="rounded h-full flex justify-center items-center m-4">
             <div class="rounded bg-white shadow-md h-48 w-48 p-6 flex flex-col justify-around" id="yahoo">
@@ -59,7 +76,7 @@
                     <p class="text-base text-gray-600">OpenWeather</p>
                 </div>
                 <div>
-                    <p class="text-2xl text-gray-700 font-bold" id="openWeatherRainfall"></p>
+                    <p class="text-2xl text-gray-700 font-bold" id="openWeatherForcast"></p>
                 </div>
                 <div class="text-sm">
                     <p class="text-gray-600" id="openWeatherDate"></p>
@@ -67,43 +84,28 @@
             </div>
         </div>
         <!-- カードここまで -->
-
         <!-- カードここから -->
         <div class="rounded h-full flex justify-center items-center m-4">
             <div class="rounded bg-white shadow-md h-48 w-48 p-6 flex flex-col justify-around">
                 <div>
-                    <p class="text-base text-gray-600">SmartNews</p>
+                    <p class="text-base text-gray-600">気象庁</p>
                 </div>
                 <div>
-                    <p class="text-2xl text-gray-700 font-bold">HTML,CSS,JS</p>
+                    <p class="text-2xl text-gray-700 font-bold" id="MeteorologicalAgencyForecast"></p>
                 </div>
                 <div class="text-sm">
-                    <p class="text-gray-600">ライブラリなども使用しています</p>
+                    <p class="text-gray-600" id="MeteorologicalAgencyDate"></p>
                 </div>
             </div>
         </div>
         <!-- カードここまで -->
 
-        <!-- カードここから -->
-        <div class="rounded h-full flex justify-center items-center m-4">
-            <div class="rounded bg-white shadow-md h-48 w-48 p-6 flex flex-col justify-around">
-                <div>
-                    <p class="text-base text-gray-600">アイコン</p>
-                </div>
-                <div>
-                    <p class="text-2xl text-gray-700 font-bold">Font Awesome</p>
-                </div>
-                <div class="text-sm">
-                    <p class="text-gray-600">素敵なアイコンを選びました</p>
-                </div>
-            </div>
-        </div>
-        <!-- カードここまで -->
+
     </div>
 
     <!-- 天気終わり -->
     <!--実測値ここから -->
-    <h1 class="text-center m-2 text-lg font-bold">本日の実測値</h1>
+    <h1 class="text-center m-2 text-lg font-bold mt-16">本日の実測値(宇都宮市)</h1>
     <div class="info flex  mx-auto justify-center flex-wrap">
 
         <div class="rounded flex justify-center items-center m-4">
@@ -142,13 +144,28 @@
     </div>
     <!--実測値ここまで -->
 
-    <div class="text-center">
-        <h1 class="font-bold">各種クレジット</h1>
-        <p>*1)Webサービス by Yahoo! JAPAN （https://developer.yahoo.co.jp/about）</p>
-        <p>*2)最新の気象データ（https://www.data.jma.go.jp/obd/stats/data/mdrr/）を基に jjwd.info が加工したデータ</p>
+    <div class=" mt-16 flex flex-col">
+        <h1 class="text-center m-2 text-lg font-bold mt-16">各種クレジット</h1>
+        <div class=" mx-auto">
+
+
+            <p>*1)Webサービス by Yahoo! JAPAN （https://developer.yahoo.co.jp/about）</p>
+            <p>*2)OpenWeather</p>
+            <p>*3)© 2020 - 2020 天気予報 API（livedoor 天気互換）</p>
+            <p>*4)最新の気象データ（https://www.data.jma.go.jp/obd/stats/data/mdrr/）を基に jjwd.info が加工したデータ</p>
+        </div>
     </div>
     <!-- お天気カードココまで -->
-    <script src="weather.js"></script>
+    <div class="mt-16">
+        <h1 class="text-center m-2 text-lg font-bold ">マスコットキャラクター「てるてる」</h1>
+
+        <img src="../..//img/js/teruteru2.png" class="object-contain h-48 w-full">
+
+        <script src="weather.js"></script>
+    </div>
+    <footer class="text-center mt-8 mb-8">
+        <p>copyright usuyuki2020</p>
+    </footer>
 </body>
 
 </html>
