@@ -12,25 +12,101 @@
 // }
 
 // getYahooJson();
+getTemp();
+getDate();
+console.log("読み込まれてますよ")
+const longitude=139.928740;//経度
+const latitude=36.549710;//緯度
+function getWeather() {
+    getYahooWeather();
+    getOpenWeatherMap();
 
-function test_click() {
-    const url = 'https://map.yahooapis.jp/weather/V1/place?coordinates=139.732293,35.663613&output=json&appid=dj00aiZpPXFVc2hBZ0g2NFNUTiZzPWNvbnN1bWVyc2VjcmV0Jng9Yzc-';
-    fetch(url).then(response=>response.json()
-    ).then(data =>{
-        var nameValue=data['Feature'][0]['Name']
-        var rainfallValue=data['Feature'][0]['Property']['WeatherList']['Weather'][2]['Rainfall']
-        // var tempValue=data['Property']['WeatherList']['Weather']
-        // var descValue=data['weather'][0]['description']
-        console.log(data)
-        yahooPlace.innerHTML =nameValue;
-        yahooRainfall.innerHTML =rainfallValue;
-        // temp.innerHTML =tempValue;
-        // descValue.innerHTML=descValue;
-    }
-    );
 };
 
 
+function getYahooWeather(){
+       //↑宇大陽東の噴水の座標
+    // 35.663613みたいに
+    const url = 'https://map.yahooapis.jp/weather/V1/place?coordinates='+longitude+','+latitude+'&output=json&appid=dj00aiZpPXFVc2hBZ0g2NFNUTiZzPWNvbnN1bWVyc2VjcmV0Jng9Yzc-';
+    // https://map.yahooapis.jp/weather/V1/place?coordinates=139.732293,35.663613&output=json&appid=dj00aiZpPXFVc2hBZ0g2NFNUTiZzPWNvbnN1bWVyc2VjcmV0Jng9Yzc-
 
-
+    fetch(url).then(response=>response.json()
+    ).then(data =>{
+        console.log(data);
+        var nameValue=data['Feature'][0]['Name']
+        var rainfallValue=data['Feature'][0]['Property']['WeatherList']['Weather'][2]['Rainfall']
+        var dataValue=data['Feature'][0]['Property']['WeatherList']['Weather'][2]['Date']
+        // var tempValue=data['Property']['WeatherList']['Weather']
+        // var descValue=data['weather'][0]['description']
+ 
+      
+        yahooDate.innerHTML =dataValue.substr( -4,2 )+"時"+dataValue.substr( -2 )+"分"+"の予想降水量";
   
+        // temp.innerHTML =tempValue;
+        // descValue.innerHTML=descValue;
+    
+        if(rainfallValue ==0){
+            weatherIcon='<i class="fas fa-sun"></i>';
+        }else {
+            weatherIcon='<i class="fas fa-umbrella"></i>';
+        }
+  
+        yahooRainfall.innerHTML =rainfallValue+"mm/h "+weatherIcon;
+    }
+
+    
+    );
+}
+
+function getOpenWeatherMap(){
+    // {
+    //     "id": 1849053,
+    //     "name": "Utsunomiya",
+    //     "state": "",
+    //     "country": "JP",
+    //     "coord": {
+    //         "lon": 139.883606,
+    //         "lat": 36.56583
+    //     }
+    // }
+    const url ="http://api.openweathermap.org/data/2.5/forecast?lat="+latitude+"&lon="+longitude+"&APPID=5366a31f43daa2a39126dea4dfd57fa2";
+    fetch(url).then(response=>response.json()
+    ).then(data =>{
+        console.log(data);
+        openWeatherDate.innerHTML=data.list[3].dt_txt+"の予想天気模様";
+        openWeatherIcon=data.list[3].weather[0].icon;
+        openWeatherRainfall.innerHTML=data.list[3].weather[0].description+"<img src='http://openweathermap.org/img/wn/"+openWeatherIcon+".png'>";
+    }
+    );
+}
+
+
+//最低気温と最高気温取得
+function getTemp(){
+    //宇都宮市明保野町　宇都宮地方気象台
+    const url ="https://jjwd.info/api/v2/station/41277";
+    fetch(url).then(response=>response.json()
+    ).then(data =>{
+       
+        maxTempValue.innerHTML =data.station.max_temp.temp_daily_max+"度";
+        maxTempTime.innerHTML ="観測時刻:"+data.station.max_temp.temp_daily_max_time_hour+"時"+data.station.max_temp.temp_daily_max_time_minute+"分";
+        minTempValue.innerHTML =data.station.min_temp.temp_daily_min+"度";
+        minTempTime.innerHTML ="観測時刻:"+data.station.min_temp.temp_daily_min_time_hour+"時"+data.station.min_temp.temp_daily_min_time_minute+"分";
+
+
+    }
+    );
+}
+//日時出力
+function getDate(){
+    date=new Date();
+    console.log(date)
+    today.innerHTML=date.getFullYear()+"年"+date.getMonth()+"月"+date.getDate()+"日";
+}
+
+// お天気アイコン出す用
+function showWeatherIcon(rainfallValue){
+
+
+}
+
