@@ -65,7 +65,7 @@ function getOpenWeatherMap(){
     //         "lat": 36.56583
     //     }
     // }
-    const url ="http://api.openweathermap.org/data/2.5/forecast?lat="+latitude+"&lon="+longitude+"&APPID=5366a31f43daa2a39126dea4dfd57fa2";
+    const url ="https://api.openweathermap.org/data/2.5/forecast?lat="+latitude+"&lon="+longitude+"&APPID=5366a31f43daa2a39126dea4dfd57fa2";
     fetch(url).then(response=>response.json()
     ).then(data =>{
         // console.log(data);
@@ -75,6 +75,8 @@ function getOpenWeatherMap(){
     }
     );
 }
+
+
 function getMeteorologicalAgency(){
     
     const url ="https://weather.tsukumijima.net/api/forecast/city/090010";
@@ -100,7 +102,8 @@ function getTemp(){
         maxTempTime.innerHTML ="観測時刻:"+data.station.max_temp.temp_daily_max_time_hour+"時"+data.station.max_temp.temp_daily_max_time_minute+"分";
         minTempValue.innerHTML =data.station.min_temp.temp_daily_min+"度";
         minTempTime.innerHTML ="観測時刻:"+data.station.min_temp.temp_daily_min_time_hour+"時"+data.station.min_temp.temp_daily_min_time_minute+"分";
-
+        nowTempValue.innerHTML =data.station.min_temp.temp_daily_min+"度";
+        nowTempTime.innerHTML ="観測時刻:"+data.station.min_temp.temp_daily_min_time_hour+"時"+data.station.min_temp.temp_daily_min_time_minute+"分";
 
     }
     );
