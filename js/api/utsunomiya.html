@@ -5,9 +5,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>宇都宮でのQOL向上プラットホーム</title>
+    <!-- tailwindcss読み込み -->
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <!-- font awsome読み込み -->
+    <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
 </head>
 
 <body>
+    <header class="border-b-2 ">
+        <h1 class="text-center m-2 text-3xl font-bold mb-3 mx-10 ">宇都宮でのQOL向上プラットホーム</h1>
+    </header>
+    <main>
+        <article class="border-2 border-blue-200 mx-10 my-10 px-5 py-5">
+            <h2 class="text-center m-2 text-lg font-bold  ">天気予報</h2>
+            <div class="flex flex-row">
+                <article class="max-w-xs rounded overflow-hidden shadow-lg my-2">
+                    <img class="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains">
+                    <div class="px-6 py-4">
+                        <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
+                        <p class="text-grey-darker text-base">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores
+                            et perferendis eaque, exercitationem praesentium nihil.
+                        </p>
+                    </div>
+                    <div class="px-6 py-4">
+                        <span
+                            class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#photography</span>
+                        <span
+                            class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#travel</span>
+                        <span
+                            class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">#winter</span>
+                    </div>
+                </article>
+            </div>
+        </article>
+
+        <article>
+            <h2 class="text-center m-2 text-lg font-bold ">現在の外気</h2>
+
+        </article>
+        <article>
+            <h2 class="text-center m-2 text-lg font-bold">ISSの通貨情報</h2>
+
+        </article>
+        <article>
+            <h2 class="text-center m-2 text-lg font-bold">列車運行情報</h2>
+
+        </article>
+        <article>
+            <h2 class="text-center m-2 text-lg font-bold ">ニュース</h2>
+            <div class="flex" id="jpNews">
+
+            </div>
+        </article>
+        <article>
+            <h2 class="text-center m-2 text-lg font-bold ">宇都宮に関わるニュース</h2>
+
+        </article>
+
+    </main>
+    <footer class="border-t-2  text-center mt-8 mb-8">
+        <p>copyright usuyuki2020</p>
+    </footer>
+    <script src="utsunomiya.js"></script>
 
 </body>
 
