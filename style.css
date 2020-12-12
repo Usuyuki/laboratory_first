@@ -7,3 +7,11 @@ body {
 .font-sawarabi {
   font-family: "Sawarabi Mincho", sans-serif;
 }
+
+/* darkmodejs用 */
+.darkmode--activated h1 {
+  color: #fff;
+}
+.darkmode--activated article {
+  background-color: #cccccc;
+}
