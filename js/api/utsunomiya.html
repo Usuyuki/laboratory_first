@@ -20,32 +20,66 @@
             <h2 class="text-center m-2 text-lg font-bold  ">天気予報</h2>
             <div class="flex flex-row">
                 <article class="max-w-xs rounded overflow-hidden shadow-lg my-2">
-                    <img class="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains">
+                    <p class="text-grey-darker text-base text-center" id="MeteorologicalAgencyDate">
+
+                    </p>
+
                     <div class="px-6 py-4">
-                        <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
-                        <p class="text-grey-darker text-base">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores
-                            et perferendis eaque, exercitationem praesentium nihil.
+                        <div id="MeteorologicalAgencyIcon" class="mx-auto text-center">
+                        </div>
+                        <p class="text-center font-bold text-3xl mb-2" id="MeteorologicalAgencyForecast"></p>
+                        <p class="text-grey-darker text-base" id="MeteorologicalAgencyForecastDetail">
+
                         </p>
                     </div>
-                    <div class="px-6 py-4">
-                        <span
-                            class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#photography</span>
-                        <span
-                            class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#travel</span>
-                        <span
-                            class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">#winter</span>
-                    </div>
+
                 </article>
             </div>
         </article>
 
         <article>
-            <h2 class="text-center m-2 text-lg font-bold ">現在の外気</h2>
 
+            <h2 class="text-center m-2 text-lg font-bold ">外気</h2>
+            <!--実測値ここから -->
+            <div class="info flex  mx-auto justify-center flex-wrap">
+
+                <div class="rounded flex justify-center items-center m-4">
+                    <div class="rounded bg-white shadow-md  p-6 flex flex-col justify-around">
+                        <div>
+                            <p class="text-blue-500">最低気温</p>
+                        </div>
+                        <div>
+
+                            <p class="font-bold text-lg" id="minTempValue"></p>
+                        </div>
+                        <div>
+
+                            <p id="minTempTime"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded flex justify-center items-center m-4">
+                    <div class="rounded bg-white shadow-md  p-6 flex flex-col justify-around">
+                        <div>
+                            <p class="text-red-500">最高気温</p>
+                        </div>
+                        <div>
+                            <p class="font-bold text-lg" id="maxTempValue"></p>
+                        </div>
+                        <div>
+                            <p id="maxTempTime"></p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <!--実測値ここまで -->
         </article>
         <article>
-            <h2 class="text-center m-2 text-lg font-bold">ISSの通貨情報</h2>
+            <h2 class="text-center m-2 text-lg font-bold">ISSの通過情報</h2>
 
         </article>
         <article>
@@ -69,6 +103,7 @@
     <footer class="border-t-2  text-center mt-8 mb-8">
         <p>copyright usuyuki2020</p>
     </footer>
+
     <script src="utsunomiya.js"></script>
 
 </body>
