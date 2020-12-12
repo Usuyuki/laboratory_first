@@ -6,13 +6,30 @@ function getMeteorologicalAgency() {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
-      MeteorologicalAgencyDate.innerHTML =
-        data.forecasts[1].dateLabel + "の予想天気模様";
-      MeteorologicalAgencyIcon.innerHTML =
-        "<img class='text-center' src='" + data.forecasts[1].image.url + "'>";
-      MeteorologicalAgencyForecast.innerHTML = data.forecasts[1].image.title;
-      MeteorologicalAgencyForecastDetail.innerHTML = data.description.text;
+      forecastDetails.innerHTML = data.description.text;
+
+      var element = document.getElementById("weatherForecast");
+      var fragment = new DocumentFragment();
+
+      for (var i = 0; i < 3; i++) {
+        weatherForecastDate = data.forecasts[i].dateLabel + "の予想天気";
+        weatherForecastIcon =
+          "<img class='text-center' src='" + data.forecasts[i].image.url + "'>";
+        weatherForecast = data.forecasts[i].image.title;
+
+        var text =
+          '          <article class="max-w-xs rounded overflow-hidden shadow-lg my-2 mr-5">                    <p class="text-grey-darker text-base text-center mx-2 mt-3" >' +
+          weatherForecastDate +
+          '                    </p>                    <div class="px-6 py-4">                        <div  class="mx-auto text-center">' +
+          weatherForecastIcon +
+          '                        </div>                        <p class="text-center font-bold text-3xl mb-2" >' +
+          weatherForecast +
+          "</p>                                           </div>                </article>";
+
+        fragment.append(element.insertAdjacentHTML("afterbegin", text));
+      }
+
+      //   element.append(fragment);
     });
 }
 
@@ -37,31 +54,31 @@ function getTemp() {
         "時" +
         data.station.min_temp.temp_daily_min_time_minute +
         "分";
-      nowTempValue.innerHTML = data.station.min_temp.temp_daily_min + "度";
-      nowTempTime.innerHTML =
-        "観測時刻:" +
-        data.station.min_temp.temp_daily_min_time_hour +
-        "時" +
-        data.station.min_temp.temp_daily_min_time_minute +
-        "分";
+      //   nowTempValue.innerHTML = data.station.min_temp.temp_daily_min + "度";
+      //   nowTempTime.innerHTML =
+      //     "観測時刻:" +
+      //     data.station.min_temp.temp_daily_min_time_hour +
+      //     "時" +
+      //     data.station.min_temp.temp_daily_min_time_minute +
+      //     "分";
     });
 }
 
-getIss();
-// getUtsunomiyaNews();
-const longitude = 139.92874; //経度
-const latitude = 36.54971; //緯度
+// getIss();
+// // getUtsunomiyaNews();
+// const longitude = 139.92874; //経度
+// const latitude = 36.54971; //緯度
 
-function getIss() {
-  const url = "http://api.open-notify.org/iss-pass.json?lat=35.691&lon=139.71";
+// function getIss() {
+//   const url = "http://api.open-notify.org/iss-pass.json?lat=35.691&lon=139.71";
 
-  fetch(url)
-    .then((response) => response.json())
-    .then((data) => {
-      console.log("iss");
-      console.log(data);
-    });
-}
+//   fetch(url)
+//     .then((response) => response.json())
+//     .then((data) => {
+//       console.log("iss");
+//       console.log(data);
+//     });
+// }
 
 // getJapanNews();
 // getUtsunomiyaNews();
