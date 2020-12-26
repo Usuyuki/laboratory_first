@@ -20,6 +20,36 @@
 
         </div>
     </header>
+    <main>
+
+        <article class="my-5">
+            <h2 class="text-center text-2xl">今日の残り時間</h2>
+            <!-- 秒 -->
+            <p class="text-center" id="todayRemain"></p>
+            <p class="text-center" id="todayRemainSec"></p>
+            <!-- パーセント -->
+            <canvas id="todayPercentCircle"></canvas>
+        </article>
+        <article class="my-5">
+            <h2 class="text-center text-2xl">今年の残り時間</h2>
+        </article>
+        <article class="my-5">
+            <h2 class="text-center text-2xl">巨大小惑星「ベンヌ」衝突の可能性のある2135年9月22日までの残り時間</h2>
+
+            <p class="text-center text-xs">ＮＡＳＡはベンヌが地球に接近する事態を想定して、衝突回避のための計画「ＨＡＭＭＥＲ」を用意しているとのことです。
+                出典:CNN(https://www.cnn.co.jp/fringe/35116569.html)</p>
+        </article>
+        <article class="my-5">
+            <h2 class="text-center text-2xl">現在時刻</h2>
+            <h3 class="text-center text-xs mt-5">日本時間(JST,UTC+9)</h3>
+            <p class="text-center m-5 mt-0 text-xl" id="Watch_main_JST">読込中</p>
+            <h3 class="text-center text-xs mt-5">協定世界時(UTC)</h3>
+            <p class="text-center m-5 mt-0 text-xl" id="Watch_main_UTC">読込中</p>
+            <h3 class="text-center text-xs mt-5">UNIX時間(1970年1月1日からの経過時間)</h3>
+            <p class="text-center m-5 mt-0 text-xl" id="Watch_main_UNIX">読込中</p>
+        </article>
+
+    </main>
     <footer class="border-t-2 mt-20 p-5">
         <p class="text-center mb-3">copyright 2020 usuyuki</p>
         <!-- 私についてのリンクここから -->
@@ -58,6 +88,7 @@
         </div>
         <!-- 私についてのリンクここまで -->
     </footer>
+    <script src="index.js"></script>
 </body>
 
 </html>
