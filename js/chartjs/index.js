@@ -2,6 +2,7 @@ function watchRepeat() {
   showClock();
   todayRemain();
 }
+drawTodayGraph();
 
 //時計用桁数調整
 function set2fig(num) {
@@ -57,7 +58,7 @@ function showClock() {
   var msg =
     "<span class='main-date'>" +
     nowYear +
-    "年" +
+    "" +
     nowMonth +
     "月" +
     nowDate +
@@ -92,10 +93,103 @@ function todayRemain() {
   );
 
   var todayRemain = endToday.getTime() - nowTime.getTime(); //   1秒あたり995すすむ←？？
-  document.getElementById("todayRemain").innerHTML = todayRemain;
 
   document.getElementById("todayRemainSec").innerHTML =
-    todayRemain / 1000 / 60 + "分";
+    parseInt(todayRemain / 1000, 10) + "second";
+
+  var todayRemainRate =
+    (todayRemain / (endToday.getTime() - startToday.getTime())) * 100; //今日残り何％か
+
+  return todayRemainRate;
 }
+function todayRemain() {
+  var nowTime = new Date();
+
+  var endToday = new Date(
+    nowTime.getFullYear(),
+    nowTime.getMonth(),
+    nowTime.getDate() + 1
+  );
+  var startToday = new Date(
+    nowTime.getFullYear(),
+    nowTime.getMonth(),
+    nowTime.getDate()
+  );
+
+  var todayRemain = endToday.getTime() - nowTime.getTime(); //   1秒あたり995すすむ←？？
+
+  document.getElementById("yearRemainSec").innerHTML =
+    parseInt(todayRemain / 1000, 10) + "second";
+
+  var todayRemainRate =
+    (todayRemain / (endToday.getTime() - startToday.getTime())) * 100; //今日残り何％か
+
+  return todayRemainRate;
+}
+function drawTodayGraph() {
+  //chartjsでグラフ上に文字表示させるためのプラグイン
+  var dataLabelPlugin = {
+    afterDatasetsDraw: function (chart, easing) {
+      // To only draw at the end of animation, check for easing === 1
+      var ctx = chart.ctx;
+
+      chart.data.datasets.forEach(function (dataset, i) {
+        var meta = chart.getDatasetMeta(i);
+        if (!meta.hidden) {
+          meta.data.forEach(function (element, index) {
+            // Draw the text in black, with the specified font
+            ctx.fillStyle = "rgb(298,298, 298)";
+
+            var fontSize = 16;
+            var fontStyle = "normal";
+            var fontFamily = "Special Elite";
+            ctx.font = Chart.helpers.fontString(
+              fontSize,
+              fontStyle,
+              fontFamily
+            );
+
+            // Just naively convert to string for now
+            var dataString = dataset.data[index].toString();
+
+            // Make sure alignment settings are correct
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+
+            var padding = 5;
+            var position = element.tooltipPosition();
+            ctx.fillText(
+              dataString,
+              position.x,
+              position.y - fontSize / 2 - padding
+            );
+          });
+        }
+      });
+    },
+  };
+  //グラフ描写
+  var todayRemainRate = parseInt(todayRemain(), 10);
+  var todayPercentCircleId = document.getElementById("todayPercentCircle");
+  var todayPercentCircle = new Chart(todayPercentCircleId, {
+    type: "pie",
+    data: {
+      labels: ["経過", "残り"],
+      datasets: [
+        {
+          label: { fontColor: "Special Elite" },
+          data: [100 - todayRemainRate, todayRemainRate],
+          backgroundColor: ["#3F2B36", "#E98B2A"],
+        },
+      ],
+    },
+    options: { animation: { animateScale: true } },
+    plugins: [dataLabelPlugin],
+  });
+}
+
+function todayView() {}
 setInterval("watchRepeat()", 1000);
+setInterval("drawTodayGraph()", 60000);
+setInterval("drawYearGraph()", 60000);
 // ここまで

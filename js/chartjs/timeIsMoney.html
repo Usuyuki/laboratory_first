@@ -7,14 +7,30 @@
     <title>TimeIsMoney</title>
     <link rel="stylesheet" href="grid.css">
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+    <!-- 数字表示用 font-family: 'Special Elite', cursive; -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+
+    <!-- font-family: 'Iceland', cursive; -->
+    <link href="https://fonts.googleapis.com/css2?family=Iceland&display=swap&text=0123456789" rel="stylesheet">
+    <style>
+        .fontSpecialElite {
+            font-family: 'Special Elite', cursive;
+        }
+
+        .fontIceland {
+            font-family: 'Iceland', cursive;
+        }
+    </style>
 </head>
 
 <body>
 
-    <header class="border-b-2 relative">
+    <header class="border-b-2 relative ">
         <div>
 
-            <h1 class="text-3xl text-center mt-4 text-gray-900">時間を大切に。</h1>
+            <h1 class="text-3xl text-center mt-4 text-gray-900 fontSpecialElite">Time is the most important</h1>
         </div>
         <div class="text-right mr-10">
 
@@ -25,12 +41,17 @@
         <article class="my-5">
             <h2 class="text-center text-2xl">今日の残り時間</h2>
             <!-- 秒 -->
-            <p class="text-center" id="todayRemain"></p>
-            <p class="text-center" id="todayRemainSec"></p>
+
+            <p class="text-center fontSpecialElite" id="todayRemainSec"></p>
             <!-- パーセント -->
             <canvas id="todayPercentCircle"></canvas>
+            <p class="text-sm text-center">グラフは1分に一度、再描写されます</p>
         </article>
         <article class="my-5">
+            <p class="text-center fontSpecialElite" id="yearRemainSec"></p>
+            <!-- パーセント -->
+            <canvas id="yearPercentCircle"></canvas>
+            <p class="text-sm text-center">グラフは1日に一度、再描写されます</p>
             <h2 class="text-center text-2xl">今年の残り時間</h2>
         </article>
         <article class="my-5">
@@ -42,11 +63,11 @@
         <article class="my-5">
             <h2 class="text-center text-2xl">現在時刻</h2>
             <h3 class="text-center text-xs mt-5">日本時間(JST,UTC+9)</h3>
-            <p class="text-center m-5 mt-0 text-xl" id="Watch_main_JST">読込中</p>
+            <p class="text-center m-5 mt-0 text-xl fontIceland" id="Watch_main_JST">読込中</p>
             <h3 class="text-center text-xs mt-5">協定世界時(UTC)</h3>
-            <p class="text-center m-5 mt-0 text-xl" id="Watch_main_UTC">読込中</p>
+            <p class="text-center m-5 mt-0 text-xl fontIceland" id="Watch_main_UTC">読込中</p>
             <h3 class="text-center text-xs mt-5">UNIX時間(1970年1月1日からの経過時間)</h3>
-            <p class="text-center m-5 mt-0 text-xl" id="Watch_main_UNIX">読込中</p>
+            <p class="text-center m-5 mt-0 text-xl fontIceland" id="Watch_main_UNIX">読込中</p>
         </article>
 
     </main>
@@ -88,6 +109,7 @@
         </div>
         <!-- 私についてのリンクここまで -->
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
     <script src="index.js"></script>
 </body>
 
