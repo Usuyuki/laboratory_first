@@ -110,8 +110,9 @@ function todayRemain() {
 function yearRemain() {
   var nowTime = new Date();
 
-  var endYear = new Date(nowTime.getFullYear() + 1, 1, 1);
-  var startYear = new Date(nowTime.getFullYear(), 1, 1);
+  var endYear = new Date(nowTime.getFullYear() + 1, 0, 1);
+
+  var startYear = new Date(nowTime.getFullYear(), 0, 1);
 
   var yearRemain = endYear.getTime() - nowTime.getTime(); //   1秒あたり995すすむ←？？
 
