@@ -13,6 +13,18 @@
 
     <!-- font-family: 'Iceland', cursive; -->
     <link href="https://fonts.googleapis.com/css2?family=Iceland&display=swap&text=0123456789" rel="stylesheet">
+
+    <!-- OGP設定 -->
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="TimeIsTheMostImportant" />
+    <meta property="og:description" content="今日の残り時間や、今年の残り時間をグラフで表示してみました。" />
+    <meta property="og:image"
+        content="https://usuyuki.github.io/laboratory_first/img/thumbnail/exIndexTimeIsTheMostimortant.jpg">
+    <meta property="og:url" content="https://usuyuki.github.io/laboratory_first/js/chartjs/timeIsMoney.html" />
+    <meta property="og:site_name" content="TimeIsTheMostImportant" />
+
+    <meta name="twitter:site" content="@usuyuki26" />
     <style>
         .fontSpecialElite {
             font-family: 'Special Elite', cursive;
@@ -129,6 +141,24 @@
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
     <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+        var options = {
+            bottom: '32px', // default: '32px'
+            right: '32px', // default: '32px'
+            left: 'unset', // default: 'unset'
+            time: '0.5s', // default: '0.3s'
+            mixColor: '#fff', // default: '#fff'
+            backgroundColor: '#fff', // default: '#fff'
+            buttonColorDark: '#100f2c', // default: '#100f2c'
+            buttonColorLight: '#fff', // default: '#fff'
+            saveInCookies: true, // default: true,
+            label: '🌓' // default: ''
+        }
+
+        const darkmode = new Darkmode(options);
+        darkmode.showWidget();
+    </script>
 </body>
 
 </html>
