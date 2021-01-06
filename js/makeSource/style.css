@@ -12,6 +12,18 @@
   animation-duration: 3s;
 }
 
+.fontSpecialElite {
+  font-family: "Special Elite", cursive;
+}
+
+.fontIceland {
+  font-family: "Iceland", cursive;
+}
+
+.darkmode--activated h1 {
+  color: #fff;
+}
+
 body {
   /* background-color: blue !important; */
 }
