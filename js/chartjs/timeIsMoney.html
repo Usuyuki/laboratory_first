@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TimeIsTheMostImportant</title>
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <meta name="description" content="今日の残り時間や、今年の残り時間をグラフで表示してみました。">
 
     <!-- 数字表示用 font-family: 'Special Elite', cursive; -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -38,6 +39,19 @@
             color: #fff;
         }
     </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F6ZDMSQSQW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-F6ZDMSQSQW');
+    </script>
+    <!-- Googleアナリティクスここまで -->
 </head>
 
 <body>
@@ -113,14 +127,15 @@
             <a href="https://usuyuki.github.io/laboratory_first/">
                 <div
                     class=" items-center bg-b rounded bg-white text-gray-700  font-bold px-4 py-3 m-3 hover:text-white hover:bg-gray-700  duration-500">
-                    <p>HOMEに戻る</p>
+                    <p><i class="fas fa-home"></i> HOMEに戻る</p>
                 </div>
             </a>
             <!-- カードココまで -->
             <a href="https://portfolio.usuyuki.net/">
                 <div
                     class=" items-center bg-b rounded bg-white text-gray-700  font-bold px-4 py-3 m-3 hover:text-white hover:bg-gray-700 duration-500">
-                    <p><i class="fas fa-user-alt"></i> ポートフォリオ</p>
+                    <p><i class="fas fa-user-alt"></i>
+                        Author Portfolio</p>
                 </div>
             </a>
             <!-- カードココまで -->
@@ -128,7 +143,8 @@
             <a href="https://twitter.com/usuyuki26">
                 <div
                     class=" items-center bg-b rounded bg-white text-gray-700  font-bold px-4 py-3 m-3 hover:text-white hover:bg-gray-700 duration-500">
-                    <p><i class="fab fa-twitter"></i> Twitter</p>
+                    <p><i class="fab fa-twitter"></i>
+                        Author Twitter</p>
                 </div>
             </a>
             <!-- カードココまで -->
@@ -136,7 +152,8 @@
             <a href="https://github.com/Usuyuki">
                 <div
                     class=" items-center bg-b rounded bg-white text-gray-700  font-bold px-4 py-3 m-3 hover:text-white hover:bg-gray-700 duration-500">
-                    <p><i class="fab fa-github"></i> GitHub</p>
+                    <p><i class="fab fa-github"></i>
+                        Author GitHub</p>
                 </div>
             </a>
             <!-- カードココまで -->

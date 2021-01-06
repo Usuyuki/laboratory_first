@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="レポートやスライドで参考文献などを記述する際にコピペできる出典生成ツールです。">
+    <title>出典の型生成ツール</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+    <!-- font awsome読み込み -->
+    <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- OGP設定 -->
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="出典の型生成ツール" />
+    <meta property="og:description" content="レポートやスライドで参考文献などを記述する際にコピペできる出典生成ツールです。" />
+    <meta property="og:image"
+        content="https://usuyuki.github.io/laboratory_first/img/thumbnail/exIndexTimeIsTheMostimortant.jpg">
+    <meta property="og:url" content="https://usuyuki.github.io/laboratory_first/js/chartjs/timeIsMoney.html" />
+    <meta property="og:site_name" content="TimeIsTheMostImportant" />
+
+    <meta name="twitter:site" content="@usuyuki26" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F6ZDMSQSQW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-F6ZDMSQSQW');
+    </script>
+    <!-- Googleアナリティクスここまで -->
+</head>
+
+<body class="">
+
+    <header class=" border-b-2 relative ">
+        <div>
+
+            <h1 class="text-3xl text-center mt-4 text-gray-900 fontSpecialElite">出典の型生成ツール</h1>
+        </div>
+        <div class="text-right mr-10">
+
+        </div>
+    </header>
+    <main class=" pb-40">
+        <div class="text-center mx-auto my-5">
+            <h2 class="text-2xl my-5">何ができる？</h2>
+            <p class="text-lg">レポートやスライドなどで地味に手間のかかる「参考文献」の欄に入れる著者名、出典などのお手伝いをします。</p>
+        </div>
+        <div class="text-center mx-auto my-5">
+            <h2 class="text-2xl my-5">出力例</h2>
+            <div class="w-auto">
+
+                <p class="bg-gray-100 border-b-2" style="word-break: keep-all;">総務省
+                    総務省 電波利用ホームページ　周波数割当てプロセス
+                    [URL:https://www.tele.soumu.go.jp/j/adm/freq/process/index.htm,団体名:総務省,閲覧日時:2021年1月6日11時47分]
+                </p>
+            </div>
+        </div>
+        <div class="md:mx-24">
+
+            <div class="text-center mx-auto my-5 border border-4 border-red-400 rounded-2xl w-auto p-5 ">
+
+                <p class="text-lg text-blue-500 mb-5"><a href="#net">「ネットから引用する論文・記事を型に当てはめる」へ飛ぶ</a></p>
+                <p class="text-lg text-blue-500"><a href="#book">「 書籍から引用する論文・記事を型に当てはめる」へ飛ぶ</a>
+                </p>
+            </div>
+        </div>
+        <!-- Root element for center items -->
+        <div class="flex flex-col h-screen " id="net">
+            <!-- URLCard Container -->
+            <div class="grid place-items-center mx-2 mt-12">
+                <!-- URL Card -->
+                <div class="w-11/12 p-12 sm:w-8/12 md:w-6/12 lg:w-5/12 2xl:w-4/12 
+            px-6 py-10 sm:px-10 sm:py-6 
+            bg-white rounded-lg shadow-md lg:shadow-lg">
+
+                    <!-- Card Title -->
+                    <h2 class="text-center font-semibold text-3xl lg:text-4xl text-gray-800">
+                        ネットから引用する論文・記事を型に当てはめる
+                    </h2>
+
+                    <form class="mt-10">
+                        <!-- net_title Input -->
+                        <label for="net_title" class="block text-xs font-semibold text-gray-600 uppercase">ページタイトル<span
+                                class="text-red-500 text-xs">(必須)</span></label>
+                        <input id="net_title" type="net_title" name="net_title"
+                            placeholder="例:総務省 電波利用ホームページ　周波数割当てプロセス" autocomplete="net_title" class="block w-full py-3 px-1 mt-2 
+                    text-gray-800 appearance-none 
+                    border-b-2 border-gray-100
+                    focus:text-gray-500 focus:outline-none focus:border-gray-200" required />
+                        <!-- url Input -->
+                        <label for="url" class="block text-xs font-semibold text-gray-600 uppercase">URL<span
+                                class="text-red-500 text-xs">(必須)</span></label>
+                        <input id="url" type="url" name="url"
+                            placeholder="例:https://www.tele.soumu.go.jp/j/adm/freq/process/index.htm" autocomplete="url"
+                            class="block w-full py-3 px-1 mt-2 
+                    text-gray-800 appearance-none 
+                    border-b-2 border-gray-100
+                    focus:text-gray-500 focus:outline-none focus:border-gray-200" required />
+
+                        <!-- nameOfOrganization Input -->
+                        <label for="nameOfOrganization"
+                            class="block mt-2 text-xs font-semibold text-gray-600 uppercase">団体名<span
+                                class="text-red-500 text-xs">(必須)</span></label>
+                        <input id="nameOfOrganization" type="nameOfOrganization" name="nameOfOrganization"
+                            placeholder="例:総務省" autocomplete="organization" class="block w-full py-3 px-1 mt-2 mb-4
+                    text-gray-800 appearance-none 
+                    border-b-2 border-gray-100
+                    focus:text-gray-500 focus:outline-none focus:border-gray-200" required />
+
+                        <!-- dateOfView Input -->
+                        <label for="dateOfView"
+                            class="block mt-2 text-xs font-semibold text-gray-600 uppercase">閲覧日、時刻<span
+                                class="text-red-500 text-xs">(必須)</span></label>
+                        <input id="dateOfView" type="dateOfView" name="dateOfView" placeholder="例:2021年1月6日11時47分"
+                            autocomplete="date" class="block w-full py-3 px-1 mt-2 mb-4
+                    text-gray-800 appearance-none 
+                    border-b-2 border-gray-100
+                    focus:text-gray-500 focus:outline-none focus:border-gray-200" required />
+
+
+                    </form>
+                    <!-- Buttton -->
+                    <button class="w-full py-3 mt-10 bg-gray-800 rounded-sm
+            font-medium text-white uppercase
+            focus:outline-none hover:bg-gray-700 hover:shadow-none" onclick="changeUrlToSource()">
+                        変換
+                    </button>
+                </div>
+            </div>
+            <div class="grid place-items-center mx-2 mt-4 mb-12">
+
+
+                <!-- Result Card -->
+                <div class="w-11/12 p-12 sm:w-8/12 md:w-6/12 lg:w-5/12 2xl:w-4/12 
+            px-6 py-10 sm:px-10 sm:py-6 
+            bg-white rounded-lg shadow-md lg:shadow-lg">
+                    <p class="text-center " id="resultOfUrl">出力結果</p>
+                    <button class="w-full py-3 mt-10 bg-gray-800 rounded-sm
+                    font-medium text-white uppercase
+                    focus:outline-none hover:bg-gray-700 hover:shadow-none" onclick="copyUrl()">
+                        文字をコピー
+                    </button>
+                    <p class="text-center text-red-500" id="endCopyUrl">
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Root element for center items -->
+        <div class="flex flex-col h-screen " id="book">
+            <!-- URLCard Container -->
+            <div class="grid place-items-center mx-2 mt-12">
+                <!-- URL Card -->
+                <div class="w-11/12 p-12 sm:w-8/12 md:w-6/12 lg:w-5/12 2xl:w-4/12 
+            px-6 py-10 sm:px-10 sm:py-6 
+            bg-white rounded-lg shadow-md lg:shadow-lg">
+
+                    <!-- Card Title -->
+                    <h2 class="text-center font-semibold text-3xl lg:text-4xl text-gray-800" id="url">
+                        書籍から引用する論文・記事を型に当てはめる
+                    </h2>
+
+                    <form class="mt-10">
+                        <!-- book_title Input -->
+                        <label for="book_title" class="block text-xs font-semibold text-gray-600 uppercase">論文名<span
+                                class="text-red-500 text-xs">(必須)</span></label>
+                        <input id="book_title" type="book_title" name="book_title"
+                            placeholder="例:A Chinese alligator in heliox: formant frequencies in a crocodilian"
+                            autocomplete="book_title" class="block w-full py-3 px-1 mt-2 
+                    text-gray-800 appearance-none 
+                    border-b-2 border-gray-100
+                    focus:text-gray-500 focus:outline-none focus:border-gray-200" required />
+                        <!-- author Input -->
+                        <label for="author" class="block text-xs font-semibold text-gray-600 uppercase">著者<span
+                                class="text-red-500 text-xs">(必須)</span></label>
+                        <input id="author" type="author" name="author" placeholder="例:西村剛准" autocomplete="author" class="block w-full py-3 px-1 mt-2 
+                    text-gray-800 appearance-none 
+                    border-b-2 border-gray-100
+                    focus:text-gray-500 focus:outline-none focus:border-gray-200" required />
+
+                        <!-- titleOfPaper Input -->
+                        <label for="titleOfPaper"
+                            class="block mt-2 text-xs font-semibold text-gray-600 uppercase">論文誌名</label>
+                        <input id="titleOfPaper" type="titleOfPaper" name="titleOfPaper" placeholder="例:イグノーベル賞大全"
+                            autocomplete="titleOfPaper" class="block w-full py-3 px-1 mt-2 mb-4
+                    text-gray-800 appearance-none 
+                    border-b-2 border-gray-100
+                    focus:text-gray-500 focus:outline-none focus:border-gray-200" />
+
+                        <!-- volulme Input -->
+                        <label for="volulme" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">巻号</label>
+                        <input id="volulme" type="volulme" name="volulme" placeholder="例:63巻2号" autocomplete="volulme"
+                            class="block w-full py-3 px-1 mt-2 mb-4
+                    text-gray-800 appearance-none 
+                    border-b-2 border-gray-100
+                    focus:text-gray-500 focus:outline-none focus:border-gray-200" />
+                        <!-- page Input -->
+                        <label for="page" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">ページ</label>
+                        <input id="page" type="page" name="page" placeholder="例:pp.53-63" autocomplete="page" class="block w-full py-3 px-1 mt-2 mb-4
+                   text-gray-800 appearance-none 
+                   border-b-2 border-gray-100
+                   focus:text-gray-500 focus:outline-none focus:border-gray-200" />
+                        <!-- publishDate Input -->
+                        <label for="publishDate"
+                            class="block mt-2 text-xs font-semibold text-gray-600 uppercase">発行年<span
+                                class="text-red-500 text-xs">(必須)</span></label>
+                        <input id="publishDate" type="publishDate" name="publishDate" placeholder="例:2021"
+                            autocomplete="publishDate" class="block w-full py-3 px-1 mt-2 mb-4
+                   text-gray-800 appearance-none 
+                   border-b-2 border-gray-100
+                   focus:text-gray-500 focus:outline-none focus:border-gray-200" required />
+
+
+                    </form>
+                    <!-- Buttton -->
+                    <button class="w-full py-3 mt-10 bg-gray-800 rounded-sm
+            font-medium text-white uppercase
+            focus:outline-none hover:bg-gray-700 hover:shadow-none" onclick="changeBookToSource()">
+                        変換
+                    </button>
+                </div>
+            </div>
+            <div class="grid place-items-center mx-2 my-4 ">
+
+
+                <!-- Result Card -->
+                <div class="w-11/12 p-12 sm:w-8/12 md:w-6/12 lg:w-5/12 2xl:w-4/12 
+             px-6 py-10 sm:px-10 sm:py-6 
+             bg-white rounded-lg shadow-md lg:shadow-lg">
+                    <p class="text-center" id="resultOfBook">出力結果</p>
+                    <button class="w-full py-3 mt-10 bg-gray-800 rounded-sm
+                     font-medium text-white uppercase
+                     focus:outline-none hover:bg-gray-700 hover:shadow-none" onclick="copyBook()">
+                        文字をコピー
+                    </button>
+                    <p class="text-center text-red-500" id="endCopyBook">
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer class=" border-t-2 mt-20 p-5">
+        <p class="text-center mb-3">copyright 2020 usuyuki</p>
+        <!-- 私についてのリンクここから -->
+        <div class="info flex  mx-auto justify-center flex-wrap">
+            <!-- カードココから -->
+            <a href="https://usuyuki.github.io/laboratory_first/">
+                <div
+                    class=" items-center bg-b rounded bg-white text-gray-700  font-bold px-4 py-3 m-3 hover:text-white hover:bg-gray-700  duration-500">
+                    <p><i class="fas fa-home"></i> HOMEに戻る</p>
+                </div>
+            </a>
+            <!-- カードココまで -->
+            <a href="https://portfolio.usuyuki.net/">
+                <div
+                    class=" items-center bg-b rounded bg-white text-gray-700  font-bold px-4 py-3 m-3 hover:text-white hover:bg-gray-700 duration-500">
+                    <p><i class="fas fa-user-alt"></i>
+                        Author Portfolio</p>
+                </div>
+            </a>
+            <!-- カードココまで -->
+            <!-- カードココから -->
+            <a href="https://twitter.com/usuyuki26">
+                <div
+                    class=" items-center bg-b rounded bg-white text-gray-700  font-bold px-4 py-3 m-3 hover:text-white hover:bg-gray-700 duration-500">
+                    <p><i class="fab fa-twitter"></i>
+                        Author Twitter</p>
+                </div>
+            </a>
+            <!-- カードココまで -->
+            <!-- カードココから -->
+            <a href="https://github.com/Usuyuki">
+                <div
+                    class=" items-center bg-b rounded bg-white text-gray-700  font-bold px-4 py-3 m-3 hover:text-white hover:bg-gray-700 duration-500">
+                    <p><i class="fab fa-github"></i>
+                        Author GitHub</p>
+                </div>
+            </a>
+            <!-- カードココまで -->
+        </div>
+        <!-- 私についてのリンクここまで -->
+    </footer>
+    <script src="makesource.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+        var options = {
+            bottom: '32px', // default: '32px'
+            right: '32px', // default: '32px'
+            left: 'unset', // default: 'unset'
+            time: '0.5s', // default: '0.3s'
+            mixColor: '#fff', // default: '#fff'
+            backgroundColor: '#fff', // default: '#fff'
+            buttonColorDark: '#100f2c', // default: '#100f2c'
+            buttonColorLight: '#fff', // default: '#fff'
+            saveInCookies: true, // default: true,
+            label: '🌓' // default: ''
+        }
+
+        const darkmode = new Darkmode(options);
+        darkmode.showWidget();
+    </script>
+</body>
+
+</html>
