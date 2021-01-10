@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html lang="ja">
 
-<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>よこすくろーる</title>
+    <meta name="description" content="作品説明">
 
-    <!-- Googleアナリティクスここから -->
+    <!-- TailwindCSS読み込み -->
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- font awsome読み込み -->
+    <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
+    <!-- OGP設定 -->
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="よこすくろーる" />
+    <meta property="og:description" content="ここにうすゆき説明入ります" />
+    <meta property="og:image" content="https://usuyuki.github.io/laboratory_first/img/thumbnail/.jpg">
+    <meta property="og:url" content="https://usuyuki.github.io/laboratory_first/" />
+    <meta property="og:site_name" content="よこすくろーる" />
+
+    <meta name="twitter:site" content="@usuyuki26" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-F6ZDMSQSQW"></script>
     <script>
@@ -17,796 +35,69 @@
         gtag('config', 'G-F6ZDMSQSQW');
     </script>
     <!-- Googleアナリティクスここまで -->
+</head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>萬屋うすゆき</title>
-    <meta name="description" content="うすゆきが作った小さな制作物をまとめて置いているサイトです">
+<body>
 
-
-    <!-- googleフォント読み込み -->
-    <!-- kosugiMaru -->
-    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
-    <!-- タイトル用のさわらび明朝 -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
-
-    <!-- tailwindcss読み込み -->
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-    <!-- font awsome読み込み -->
-    <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-
-    <link rel="icon" href="./favicon.ico">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- IEで互換モードにされている場合に無効化してモダンブラウザに対応してもらうタグ -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-
-    <!-- OGP設定 -->
-
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="萬屋うすゆき-top-" />
-    <meta property="og:description" content="うすゆきが作った小さな制作物をまとめて置いているサイトです" />
-    <meta property="og:image" content="https://usuyuki.github.io/laboratory_first/img/ogbImage.jpg">
-    <meta property="og:url" content="https://usuyuki.github.io/laboratory_first/" />
-    <meta property="og:site_name" content="萬屋うすゆき" />
-
-    <meta name="twitter:site" content="@usuyuki26" />
-
-<body class="bg-gray-100">
-
-    <header class="border-b-2 relative">
+    <header class="border-b-2 relative ">
         <div>
 
-            <h1 class="text-3xl text-center mt-4 font-sawarabi text-gray-900"><ruby>萬屋<rp>(</rp>
-                    <rt class="text-xs">よろずや</rt>
-                    <rp>)</rp>
-                </ruby>うすゆき</h1>
+            <h1 class="text-3xl text-center mt-4 text-gray-900 fontSpecialElite">よこすくろーる</h1>
         </div>
         <div class="text-right mr-10">
 
         </div>
     </header>
-    <main class="main mt-10">
-        <!-- リンクココから -->
-        <h2 class="text-center m-2 text-xl font-bold">実験制作物のリンク集</h2>
 
-
-        <div class="info flex m-auto flex-row justify-center flex-wrap">
-            <!-- カード開始 -->
-            <!-- カードここから -->
-            <article
-                class="bg-white shadow p-3 rounded lg:w-64 m-4 border-2 border-gray-100 hover:border-gray-600 duration-500">
-                <a href="./js/p5js/testp5.html">
-                    <div>
-                        <div style="background-image: url('./img/thumbnail/exIndexP5js.jpg')"
-                            class="bg-cover bg-center bg-gray-300 h-32 rounded">
-                        </div>
-                    </div>
-                    <div class="mt-6">
-                        <p class="text-lg text-bold tracking-wide text-gray-600 mb-2 text-center">
-                            p5.jsで珈琲を描く
-                        </p>
-                        <p class="text-sm text-gray-600 font-hairline">
-                            美しいサイトが作れるp5.jsを使ってみました。アイデアと技術力があればとんでもないものが作れそうな予感がします。
-                        </p>
-                    </div>
-                    <div class="mt-6">
-                        <div class="flex justify-items-auto flex-wrap">
-                            <p class="shadow bg-yellow-500  text-gray-900 rounded-md px-3 text-center py-2 m-2">
-                                HTML
-                            </p>
-                            <p class="shadow bg-blue-600  text-white rounded-md px-3 text-center py-2 m-2 ">
-                                CSS
-                            </p>
-                            <p class="shadow bg-yellow-300 text-gray-900 rounded-md px-3 text-center py-2 m-2 ">
-                                JS
-                            </p>
-
-                            <p class="shadow bg-pink-600 text-white rounded-md px-3 text-center py-2 m-2 ">
-                                p5.js
-                            </p>
-
-
-                        </div>
-                    </div>
-                    <div class="mt-6">
-                        <p class="text-xs text-gray-600 font-hairline text-center">
-                            2021/1/10
-                        </p>
-                    </div>
-                </a>
-            </article>
-            <!-- カードここまで -->
-
-            <!-- カードここから -->
-            <article
-                class="bg-white shadow p-3 rounded lg:w-64 m-4 border-2 border-gray-100 hover:border-gray-600 duration-500">
-                <a href="./js/makeSource/makesource.html">
-                    <div>
-                        <div style="background-image: url('./img/thumbnail/exIndexMakeSource.jpg')"
-                            class="bg-cover bg-center bg-gray-300 h-32 rounded">
-                        </div>
-                    </div>
-                    <div class="mt-6">
-                        <p class="text-lg text-bold tracking-wide text-gray-600 mb-2 text-center">
-                            出典の型生成ツール
-                        </p>
-                        <p class="text-sm text-gray-600 font-hairline">
-                            レポートやスライドなどで地味に手間のかかる「参考文献」の欄に入れる著者名、出典などのお手伝いをします
-                        </p>
-                    </div>
-                    <div class="mt-6">
-                        <div class="flex justify-items-auto flex-wrap">
-                            <p class="shadow bg-yellow-500  text-gray-900 rounded-md px-3 text-center py-2 m-2">
-                                HTML
-                            </p>
-                            <p class="shadow bg-blue-600  text-white rounded-md px-3 text-center py-2 m-2 ">
-                                CSS
-                            </p>
-                            <p class="shadow bg-yellow-300 text-gray-900 rounded-md px-3 text-center py-2 m-2 ">
-                                JS
-                            </p>
-
-                        </div>
-                    </div>
-                    <div class="mt-6">
-                        <p class="text-xs text-gray-600 font-hairline text-center">
-                            2021/1/6
-                        </p>
-                    </div>
-                </a>
-            </article>
-            <!-- カードここまで -->
-
-
-            <!-- カードここから -->
-            <article
-                class="bg-white shadow p-3 rounded lg:w-64 m-4 border-2 border-gray-100 hover:border-gray-600 duration-500">
-                <a href="./js/chartjs/timeIsMoney.html">
-                    <div>
-                        <div style="background-image: url('./img/thumbnail/exIndexTimeIsTheMostimortant.jpg')"
-                            class="bg-cover bg-center bg-gray-300 h-32 rounded">
-                        </div>
-                    </div>
-                    <div class="mt-6">
-                        <p class="text-lg text-bold tracking-wide text-gray-600 mb-2 text-center">
-                            Time is the most important
-                        </p>
-                        <p class="text-sm text-gray-600 font-hairline">
-                            楽観主義の自分を戒めるために、残り時間を可視化することで、常に危機感を持って行動できるようなサイトを作りました。
-                        </p>
-                    </div>
-                    <div class="mt-6">
-                        <div class="flex justify-items-auto flex-wrap">
-                            <p class="shadow bg-yellow-500  text-gray-900 rounded-md px-3 text-center py-2 m-2">
-                                HTML
-                            </p>
-                            <p class="shadow bg-blue-600  text-white rounded-md px-3 text-center py-2 m-2 ">
-                                CSS
-                            </p>
-                            <p class="shadow bg-yellow-300 text-gray-900 rounded-md px-3 text-center py-2 m-2 ">
-                                JS
-                            </p>
-                            <p class="shadow bg-pink-700 text-white rounded-md px-3 text-center py-2 m-2 ">
-                                Chart.js
-                            </p>
-                        </div>
-                    </div>
-                    <div class="mt-6">
-                        <p class="text-xs text-gray-600 font-hairline text-center">
-                            2020/12/26
-                        </p>
-                    </div>
-                </a>
-            </article>
-            <!-- カードここまで -->
-            <!-- カードここから -->
-
-            <article
-                class="bg-white shadow p-3 rounded lg:w-64 m-4 border-2 border-gray-100 hover:border-gray-600 duration-500">
-                <a href="./js/api/weather.html">
-                    <div>
-                        <div style="background-image: url('./img/thumbnail/exIndexTeruteru.jpg')"
-                            class="bg-cover bg-center bg-gray-300 h-32 rounded">
-                        </div>
-                    </div>
-                    <div class="mt-6">
-                        <p class="text-lg text-bold tracking-wide text-gray-600 mb-2 text-center">
-                            天気情報同時取得サイト
-                        </p>
-                        <p class="text-sm text-gray-600 font-hairline">
-                            宇都宮市限定ですが、Yahoo天気、OpenWeather、気象庁、の天気予報を見にくいですが同時に見れます
-                        </p>
-                    </div>
-                    <div class="mt-6">
-                        <div class="flex justify-items-auto flex-wrap">
-                            <p class="shadow bg-yellow-500  text-gray-900 rounded-md px-3 text-center py-2 m-2">
-                                HTML
-                            </p>
-                            <p class="shadow bg-blue-600  text-white rounded-md px-3 text-center py-2 m-2 ">
-                                CSS
-                            </p>
-                            <p class="shadow bg-yellow-300 text-gray-900 rounded-md px-3 text-center py-2 m-2 ">
-                                JS
-                            </p>
-                            <p class="shadow bg-gray-600  text-white rounded-md px-3 text-center py-2 m-2 transition  ">
-                                気象関係のAPI
-                            </p>
-
-
-                        </div>
-
-                    </div>
-                    <div class="mt-6">
-                        <p class="text-xs text-gray-600 font-hairline text-center">
-                            2020/12/11
-                        </p>
-                    </div>
-                </a>
-            </article>
-            <!-- カードここまで -->
-            <!-- カードここから -->
-            <article
-                class="bg-white shadow p-3 rounded lg:w-64 m-4 border-2 border-gray-100 hover:border-gray-600 duration-500">
-                <a href="./design/grid/grid-system.html">
-                    <div>
-                        <div style="background-image: url('./img/thumbnail/exIndexGrid.jpg')"
-                            class="bg-cover bg-center bg-gray-300 h-32 rounded">
-                        </div>
-                    </div>
-                    <div class="mt-6">
-                        <p class="text-lg text-bold tracking-wide text-gray-600 mb-2 text-center">
-                            グリッドレイアウト
-                        </p>
-                        <p class="text-sm text-gray-600 font-hairline">
-                            CSSのグリッドレイアウトで新聞を作ってみました(PCのみ)
-                        </p>
-                    </div>
-                    <div class="mt-6">
-                        <div class="flex justify-items-auto flex-wrap">
-                            <p class="shadow bg-yellow-500  text-gray-900 rounded-md px-3 text-center py-2 m-2">
-                                HTML
-                            </p>
-                            <p class="shadow bg-blue-600  text-white rounded-md px-3 text-center py-2 m-2 ">
-                                CSS
-                            </p>
-
-                        </div>
-                    </div>
-                    <div class="mt-6">
-                        <p class="text-xs text-gray-600 font-hairline text-center">
-                            2020/12/5
-                        </p>
-                    </div>
-                </a>
-            </article>
-            <!-- カードここまで -->
-            <!-- カードここから -->
-
-            <article
-                class="bg-white shadow p-3 rounded lg:w-64 m-4 border-2 border-gray-100 hover:border-gray-600 duration-500">
-                <a href="./js/p5js/testp5.html">
-                    <div>
-                        <div style="background-image: url('./img/thumbnail/mikansei.png')"
-                            class="bg-cover bg-center bg-gray-300 h-32 rounded">
-                        </div>
-                    </div>
-                    <div class="mt-6">
-                        <p class="text-lg text-bold tracking-wide text-gray-600 mb-2 text-center">
-                            マウスに合わせてにゅって出てくるやつ
-                        </p>
-                        <p class="text-sm text-gray-600 font-hairline">
-                            トレンドみたいなので。
-                        </p>
-                    </div>
-                    <div class="mt-6">
-                        <div class="flex justify-items-auto flex-wrap">
-                            <p class="shadow bg-yellow-500  text-gray-900 rounded-md px-3 text-center py-2 m-2">
-                                HTML
-                            </p>
-                            <p class="shadow bg-blue-600  text-white rounded-md px-3 text-center py-2 m-2 ">
-                                CSS
-                            </p>
-
-                            <p class="shadow bg-yellow-300 text-gray-900 rounded-md px-3 text-center py-2 m-2 ">
-                                JS
-                            </p>
-
-                        </div>
-                    </div>
-                    <div class="mt-6">
-                        <p class="text-xs text-gray-600 font-hairline text-center">
-                            2020/xxx
-                        </p>
-                    </div>
-                </a>
-            </article>
-            <!-- カードここまで -->
-            <!-- カードここから -->
-            <!-- これやりたい→https://photoshopvip.net/91770#diffuse9 -->
-            <article
-                class="bg-white shadow p-3 rounded lg:w-64 m-4 border-2 border-gray-100 hover:border-gray-600 duration-500">
-                <a href="./js/p5js/testp5.html">
-                    <div>
-                        <div style="background-image: url('./img/thumbnail/mikansei.png')"
-                            class="bg-cover bg-center bg-gray-300 h-32 rounded">
-                        </div>
-                    </div>
-                    <div class="mt-6">
-                        <p class="text-lg text-bold tracking-wide text-gray-600 mb-2 text-center">
-                            拡散型シャドウ
-                        </p>
-                        <p class="text-sm text-gray-600 font-hairline">
-                            トレンドみたいなので
-                        </p>
-                    </div>
-                    <div class="mt-6">
-                        <div class="flex justify-items-auto flex-wrap">
-                            <p class="shadow bg-yellow-500  text-gray-900 rounded-md px-3 text-center py-2 m-2">
-                                HTML
-                            </p>
-                            <p class="shadow bg-blue-600  text-white rounded-md px-3 text-center py-2 m-2 ">
-                                CSS
-                            </p>
-
-
-
-                        </div>
-                    </div>
-                    <div class="mt-6">
-                        <p class="text-xs text-gray-600 font-hairline text-center">
-                            2020/xxx
-                        </p>
-                    </div>
-                </a>
-            </article>
-            <!-- カードここまで -->
-
-            <!-- カードここから -->
-            <article
-                class="bg-white shadow p-3 rounded lg:w-64 m-4 border-2 border-gray-100 hover:border-gray-600 duration-500">
-                <a href="./js/p5js/testp5.html">
-                    <div>
-                        <div style="background-image: url('./img/thumbnail/mikansei.png')"
-                            class="bg-cover bg-center bg-gray-300 h-32 rounded">
-                        </div>
-                    </div>
-                    <div class="mt-6">
-                        <p class="text-lg text-bold tracking-wide text-gray-600 mb-2 text-center">
-                            ニューモフィズムでボタンを
-                        </p>
-                        <p class="text-sm text-gray-600 font-hairline">
-                            みんな大好きニューモフィズムです
-                        </p>
-                    </div>
-                    <div class="mt-6">
-                        <div class="flex justify-items-auto flex-wrap">
-                            <p class="shadow bg-yellow-500  text-gray-900 rounded-md px-3 text-center py-2 m-2">
-                                HTML
-                            </p>
-                            <p class="shadow bg-blue-600  text-white rounded-md px-3 text-center py-2 m-2 ">
-                                CSS
-                            </p>
-
-
-
-                        </div>
-                    </div>
-                    <div class="mt-6">
-                        <p class="text-xs text-gray-600 font-hairline text-center">
-                            2020/xxx
-                        </p>
-                    </div>
-                </a>
-            </article>
-            <!-- カードここまで -->
-
-
-
-            <!-- カードここから -->
-            <article
-                class="bg-white shadow p-3 rounded lg:w-64 m-4 border-2 border-gray-100 hover:border-gray-600 duration-500">
-                <a href="./js/p5js/testp5.html">
-                    <div>
-                        <div style="background-image: url('./img/thumbnail/mikansei.png')"
-                            class="bg-cover bg-center bg-gray-300 h-32 rounded">
-                        </div>
-                    </div>
-                    <div class="mt-6">
-                        <p class="text-lg text-bold tracking-wide text-gray-600 mb-2 text-center">
-                            縦書き重視の和風デザイン
-                        </p>
-                        <p class="text-sm text-gray-600 font-hairline">
-                            日本語は縦書きでも伝わるのに使わないのはもったいないと思って作りました
-                        </p>
-                    </div>
-                    <div class="mt-6">
-                        <div class="flex justify-items-auto flex-wrap">
-                            <p class="shadow bg-yellow-500  text-gray-900 rounded-md px-3 text-center py-2 m-2">
-                                HTML
-                            </p>
-                            <p class="shadow bg-blue-600  text-white rounded-md px-3 text-center py-2 m-2 ">
-                                CSS
-                            </p>
-
-
-
-                        </div>
-                    </div>
-                    <div class="mt-6">
-                        <p class="text-xs text-gray-600 font-hairline text-center">
-                            2020/xxx
-                        </p>
-                    </div>
-                </a>
-            </article>
-            <!-- カードここまで -->
-
-            <!-- カードここから -->
-            <!-- これやりたい→https://gimmicklog.com/jquery/519/ -->
-            <article
-                class="bg-white shadow p-3 rounded lg:w-64 m-4 border-2 border-gray-100 hover:border-gray-600 duration-500">
-                <a href="./js/p5js/testp5.html">
-                    <div>
-                        <div style="background-image: url('./img/thumbnail/mikansei.png')"
-                            class="bg-cover bg-center bg-gray-300 h-32 rounded">
-                        </div>
-                    </div>
-                    <div class="mt-6">
-                        <p class="text-lg text-bold tracking-wide text-gray-600 mb-2 text-center">
-                            jQueryで四季を愉しむ
-                        </p>
-                        <p class="text-sm text-gray-600 font-hairline">
-                            jQueryの知識が必要になったのでその練習です
-                        </p>
-                    </div>
-                    <div class="mt-6">
-                        <div class="flex justify-items-auto flex-wrap">
-                            <p class="shadow bg-yellow-500  text-gray-900 rounded-md px-3 text-center py-2 m-2">
-                                HTML
-                            </p>
-                            <p class="shadow bg-blue-600  text-white rounded-md px-3 text-center py-2 m-2 ">
-                                CSS
-                            </p>
-                            <p class="shadow bg-yellow-300 text-gray-900 rounded-md px-3 text-center py-2 m-2 ">
-                                JS
-                            </p>
-
-                            <p class="shadow bg-blue-600 text-white rounded-md px-3 text-center py-2 m-2 transition  ">
-                                jQuery
-                            </p>
-
-
-                        </div>
-                    </div>
-                    <div class="mt-6">
-                        <p class="text-xs text-gray-600 font-hairline text-center">
-                            2020/xxx
-                        </p>
-                    </div>
-                </a>
-            </article>
-            <!-- カードここまで -->
-
-            <!-- カードここから -->
-            <article
-                class="bg-white shadow p-3 rounded lg:w-64 m-4 border-2 border-gray-100 hover:border-gray-600 duration-500">
-                <a href="./design/CSSanimation/css_animation_one.html">
-                    <!-- <p class=" bg-gray-600 shadow text-white rounded-md px-3 text-center py-2 m-2 ">
-                        未完成品
-                    </p>
-                    <p class=" bg-white shadow border-gray-600 text-gray-600 rounded-md px-3 text-center py-2 m-2 ">
-                        完成品
-                    </p> -->
-                    <div>
-                        <div style="background-image: url('./img/thumbnail/mikansei.png')"
-                            class="bg-cover bg-center bg-gray-300 h-32 rounded">
-                        </div>
-                    </div>
-
-                    <div class="mt-6">
-                        <p class="text-lg text-bold tracking-wide text-gray-600 mb-2 text-center">
-                            CSSアニメーションで新入生を歓迎したい！
-                        </p>
-                        <p class="text-sm text-gray-600 font-hairline">
-                            JSを使わない!CSSのアニメーションで遊んでみたい所です
-                        </p>
-                    </div>
-                    <div class="mt-6">
-                        <div class="flex justify-items-auto">
-                            <p class="shadow bg-yellow-500  text-gray-900 rounded-md px-3 text-center py-2 m-2">
-                                HTML
-                            </p>
-                            <p class="shadow bg-blue-600  text-white rounded-md px-3 text-center py-2 m-2 ">
-                                CSS
-                            </p>
-
-
-                        </div>
-                    </div>
-                    <div class="mt-6">
-                        <p class="text-xs text-gray-600 font-hairline text-center">
-                            2020/xxx
-                        </p>
-                    </div>
-
-                </a>
-            </article>
-            <!-- カードここまで -->
-
-
-
-
-
-
-
-
-
-
-
-            <!-- リンクのdiv↓↓ -->
-        </div>
-        <!-- リンクココまで -->
-
-        <!-- 言語ココから -->
-        <p class="text-sm text-center my-5">↓タップorクリックで展開されます！↓</p>
-        <details>
-            <summary class="text-center m-2 text-xl font-bold">
-                使用言語
-            </summary>
-
-            <div class="info flex  mx-auto justify-center flex-wrap">
-                <p class="shadow bg-yellow-500  text-gray-900 rounded-md px-3 text-center py-2 m-2">
-                    HTML
-                </p>
-                <p class="shadow bg-blue-600  text-white rounded-md px-3 text-center py-2 m-2 ">
-                    CSS
-                </p>
-                <p class="shadow bg-yellow-300 text-gray-900 rounded-md px-3 text-center py-2 m-2 ">
-                    JS
-                </p>
-                <p class="shadow bg-pink-600 text-white rounded-md px-3 text-center py-2 m-2 ">
-                    p5.js
-                </p>
-                <p class="shadow bg-pink-700 text-white rounded-md px-3 text-center py-2 m-2 ">
-                    Chart.js
-                </p>
-                <p class="shadow bg-blue-600 text-white rounded-md px-3 text-center py-2 m-2 transition  ">
-                    jQuery
-                </p>
-                <p class="shadow bg-gray-600  text-white rounded-md px-3 text-center py-2 m-2 transition  ">
-                    API
-                </p>
-
-            </div>
-        </details>
-
-        <!-- 言語ココまで -->
-        <!-- 技術ココから -->
-        <details>
-            <summary class="text-center m-2 text-xl font-bold">技術</summary>
-
-
-            <div class="info flex  mx-auto justify-center flex-wrap">
-                <!-- カードここから -->
-                <div class="rounded h-full flex justify-center items-center m-4">
-                    <article class="rounded bg-white shadow-md h-48 w-48 p-6 flex flex-col justify-around">
-                        <div>
-                            <p class="text-base text-gray-600">インフラ</p>
-                        </div>
-                        <div>
-                            <p class="text-2xl text-gray-700 font-bold">GitHubPages</p>
-                        </div>
-                        <div class="text-sm">
-                            <p class="text-gray-600">さくっと作りたかったので</p>
-                        </div>
-                    </article>
-                </div>
-                <!-- カードここまで -->
-
-                <!-- カードここから -->
-                <div class="rounded h-full flex justify-center items-center m-4">
-                    <article class="rounded bg-white shadow-md h-48 w-48 p-6 flex flex-col justify-around">
-                        <div>
-                            <p class="text-base text-gray-600">CSSライブラリ</p>
-                        </div>
-                        <div>
-                            <p class="text-2xl text-gray-700 font-bold">TailwindCSS</p>
-                        </div>
-                        <div class="text-sm">
-                            <p class="text-gray-600">なかなかいいです</p>
-                        </div>
-                    </article>
-                </div>
-                <!-- カードここまで -->
-
-                <!-- カードここから -->
-                <div class="rounded h-full flex justify-center items-center m-4">
-                    <article class="rounded bg-white shadow-md h-48 w-48 p-6 flex flex-col justify-around">
-                        <div>
-                            <p class="text-base text-gray-600">アイコン</p>
-                        </div>
-                        <div>
-                            <p class="text-2xl text-gray-700 font-bold">FontAwesome</p>
-                        </div>
-                        <div class="text-sm">
-                            <p class="text-gray-600">素敵なアイコンが使えます</p>
-                        </div>
-                    </article>
-                </div>
-                <!-- カードここまで -->
-
-
-
-                <!-- カードここから -->
-                <div class="rounded h-full flex justify-center items-center m-4">
-                    <article class="rounded bg-white shadow-md h-48 w-48 p-6 flex flex-col justify-around">
-                        <div>
-                            <p class="text-base text-gray-600">アナリティクス</p>
-                        </div>
-                        <div>
-                            <p class="text-2xl text-gray-700 font-bold">Google Analytics</p>
-                        </div>
-                        <div class="text-sm">
-                            <p class="text-gray-600">定番の一品です</p>
-                        </div>
-                    </article>
-                </div>
-                <!-- カードここまで -->
-
-                <!-- カードここから -->
-                <div class="rounded h-full flex justify-center items-center m-4">
-                    <article class="rounded bg-white shadow-md h-48 w-48 p-6 flex flex-col justify-around">
-                        <div>
-                            <p class="text-base text-gray-600">ダークモード</p>
-                        </div>
-                        <div>
-                            <p class="text-2xl text-gray-700 font-bold">Darkmode.js</p>
-                        </div>
-                        <div class="text-sm">
-                            <p class="text-gray-600">爆速実装を心掛けました</p>
-                        </div>
-                    </article>
-                </div>
-                <!-- カードここまで -->
-
-            </div>
-        </details>
-        <!-- 技術ココまで -->
-
-
-        <!-- aboutmeココから -->
-        <details>
-            <summary class="text-center m-2 text-xl font-bold">
-                About Me
-            </summary>
-
-
-            <div class="info flex  mx-auto justify-center flex-wrap">
-                <!-- カードここから -->
-                <div class="rounded h-full flex justify-center items-center m-4">
-                    <article class="rounded bg-white shadow-md h-48 w-48 p-6 flex flex-col justify-around">
-                        <div>
-                            <p class="text-base text-gray-600">名前</p>
-                        </div>
-                        <div>
-                            <p class="text-2xl text-gray-700 font-bold">うすゆき</p>
-                        </div>
-                        <div class="text-sm">
-                            <p class="text-gray-600">よろしくお願い致します</p>
-                        </div>
-                    </article>
-                </div>
-                <!-- カードここまで -->
-
-                <!-- カードここから -->
-                <div class="rounded h-full flex justify-center items-center m-4">
-                    <article class="rounded bg-white shadow-md h-48 w-48 p-6 flex flex-col justify-around">
-                        <div>
-                            <p class="text-base text-gray-600">年齢</p>
-                        </div>
-                        <div>
-                            <p class="text-2xl text-gray-700 font-bold">18</p>
-                        </div>
-                        <div class="text-sm">
-                            <p class="text-gray-600">若さを大切にしたいです</p>
-                        </div>
-                    </article>
-                </div>
-                <!-- カードここまで -->
-
-                <!-- カードここから -->
-                <div class="rounded h-full flex justify-center items-center m-4">
-                    <article class="rounded bg-white shadow-md h-48 w-48 p-6 flex flex-col justify-around">
-                        <div>
-                            <p class="text-base text-gray-600">所属</p>
-                        </div>
-                        <div>
-                            <p class="text-2xl text-gray-700 font-bold">宇都宮大学</p>
-                        </div>
-                        <div class="text-sm">
-                            <p class="text-gray-600">工学部です</p>
-                        </div>
-                    </article>
-                </div>
-                <!-- カードここまで -->
-
-                <!-- カードここから -->
-                <div class="rounded h-full flex justify-center items-center m-4">
-                    <article class="rounded bg-white shadow-md h-48 w-48 p-6 flex flex-col justify-around">
-                        <div>
-                            <p class="text-base text-gray-600">サークル</p>
-                        </div>
-                        <div>
-                            <p class="text-2xl text-gray-700 font-bold">U-lab</p>
-                        </div>
-                        <div class="text-sm">
-                            <p class="text-gray-600">色々やってます</p>
-                        </div>
-                    </article>
-                </div>
-                <!-- カードここまで -->
-
-
-            </div>
-        </details>
-        <!-- aboutmeココまで -->
-
-
-    </main>
+    <div class="container text-2xl ws-screen">
+        <section class="area bg-blue-200">袖ひちて</section>
+        <section class="area bg-yellow-200">むすひし水の</section>
+        <section class="area bg-red-200">こほれるを</section>
+        <section class="area bg-blue-200">春立つけふの</section>
+        <section class="area bg-yellow-200">風やとくらむ</section>
+        <section class="area bg-red-200">紀貫之</section>
+    </div>
 
     <footer class="border-t-2 mt-20 p-5">
         <p class="text-center mb-3">copyright 2020 usuyuki</p>
         <!-- 私についてのリンクここから -->
         <div class="info flex  mx-auto justify-center flex-wrap">
             <!-- カードココから -->
+            <a href="https://usuyuki.github.io/laboratory_first/">
+                <div
+                    class=" items-center bg-b rounded bg-white text-gray-700  font-bold px-4 py-3 m-3 hover:text-white hover:bg-gray-700  duration-500">
+                    <p><i class="fas fa-home"></i> HOMEに戻る</p>
+                </div>
+            </a>
+            <!-- カードココまで -->
             <a href="https://portfolio.usuyuki.net/">
                 <div
-                    class="flex items-center bg-b rounded bg-white text-gray-700  font-bold px-4 py-3 m-3 hover:text-white hover:bg-gray-700 duration-500">
-                    <p><i class="fas fa-user-alt"></i> ポートフォリオ</p>
+                    class=" items-center bg-b rounded bg-white text-gray-700  font-bold px-4 py-3 m-3 hover:text-white hover:bg-gray-700 duration-500">
+                    <p><i class="fas fa-user-alt"></i> Author portfolio</p>
                 </div>
             </a>
             <!-- カードココまで -->
             <!-- カードココから -->
             <a href="https://twitter.com/usuyuki26">
                 <div
-                    class="flex items-center bg-b rounded bg-white text-gray-700  font-bold px-4 py-3 m-3 hover:text-white hover:bg-gray-700 duration-500">
-                    <p><i class="fab fa-twitter"></i> Twitter</p>
+                    class=" items-center bg-b rounded bg-white text-gray-700  font-bold px-4 py-3 m-3 hover:text-white hover:bg-gray-700 duration-500">
+                    <p><i class="fab fa-twitter"></i>
+                        Author Twitter</p>
                 </div>
             </a>
             <!-- カードココまで -->
             <!-- カードココから -->
             <a href="https://github.com/Usuyuki">
                 <div
-                    class="flex items-center bg-b rounded bg-white text-gray-700  font-bold px-4 py-3 m-3 hover:text-white hover:bg-gray-700 duration-500">
-                    <p><i class="fab fa-github"></i> GitHub</p>
+                    class=" items-center bg-b rounded bg-white text-gray-700  font-bold px-4 py-3 m-3 hover:text-white hover:bg-gray-700 duration-500">
+                    <p><i class="fab fa-github"></i> Author GitHub</p>
                 </div>
             </a>
             <!-- カードココまで -->
         </div>
         <!-- 私についてのリンクここまで -->
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-    <script>
-        var options = {
-            bottom: '32px', // default: '32px'
-            right: '32px', // default: '32px'
-            left: 'unset', // default: 'unset'
-            time: '0.5s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: '#fff', // default: '#fff'
-            buttonColorDark: '#100f2c', // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓' // default: ''
-        }
 
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-    </script>
 </body>
 
 </html>
