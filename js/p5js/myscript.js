@@ -1,31 +1,90 @@
+let cx, cy;
+let secondsRadius;
+let minutesRadius;
+let hoursRadius;
+let clockDiameter;
+
+function setup() {
+  let canvas = createCanvas(720, 400);
+  canvas.parent("canvas");
+  stroke(255);
+
+  let radius = min(width, height) / 2;
+  secondsRadius = radius * 0.71;
+  minutesRadius = radius * 0.6;
+  hoursRadius = radius * 0.5;
+  clockDiameter = radius * 1.7;
+
+  cx = width / 2;
+  cy = height / 2;
+  pg = createGraphics(200, 200);
+}
+
+function draw() {
+  background(230);
+
+  // Draw the clock background
+  noStroke();
+  fill(0, 0, 0);
+  ellipse(cx, cy, clockDiameter + 25, clockDiameter + 25);
+  fill(126, 77, 65);
+  ellipse(cx, cy, clockDiameter, clockDiameter);
+  //コップの柄の部分
+  fill(0, 0, 0);
+  rect(530, height / 2 - 40, 40, 80);
+
+  // Angles for sin() and cos() start at 3 o'clock;
+  // subtract HALF_PI to make them start at the top
+  let s = map(second(), 0, 60, 0, TWO_PI) - HALF_PI;
+  let m = map(minute() + norm(second(), 0, 60), 0, 60, 0, TWO_PI) - HALF_PI;
+  let h = map(hour() + norm(minute(), 0, 60), 0, 24, 0, TWO_PI * 2) - HALF_PI;
+
+  // Draw the hands of the clock
+  stroke(255);
+  strokeWeight(1);
+  line(cx, cy, cx + cos(s) * secondsRadius, cy + sin(s) * secondsRadius);
+  strokeWeight(2);
+  line(cx, cy, cx + cos(m) * minutesRadius, cy + sin(m) * minutesRadius);
+  strokeWeight(4);
+  line(cx, cy, cx + cos(h) * hoursRadius, cy + sin(h) * hoursRadius);
+
+  // Draw the minute ticks
+  strokeWeight(2);
+  beginShape(POINTS);
+  for (let a = 0; a < 360; a += 6) {
+    let angle = radians(a);
+    let x = cx + cos(angle) * secondsRadius;
+    let y = cy + sin(angle) * secondsRadius;
+    vertex(x, y);
+  }
+  endShape();
+}
 
 // width heightがデフォルト変数として使える
-
 
 // 乱数 random()←引数によって意味変わる
 // random() 0-1
 // random(n) 0-n
 // random(n,m) n-m　までの乱数
-var x,y,z;
-function setup(){
-    //最初に一回だけ
-    createCanvas(480,240);
-    background('skyblue');
-    
+// var x,y,z;
+// function setup(){
+//     //最初に一回だけ
+//     createCanvas(480,240);
+//     background('skyblue');
 
-}
+// }
 
-function draw(){
-    //繰り返し実行される
-    noStroke();
-    background('skyblue');
-    ellipse(mouseX, mouseY, r, r);//マウスの状態はmouseX,Yを使う！
-    if(keyIsPressed ==true){//mouseISPressd押されるとtrueに
-        fill('pink');
-    }else{
-        fill('white');
-    }
-}
+// function draw(){
+//     //繰り返し実行される
+//     noStroke();
+//     background('skyblue');
+//     ellipse(mouseX, mouseY, r, r);//マウスの状態はmouseX,Yを使う！
+//     if(keyIsPressed ==true){//mouseISPressd押されるとtrueに
+//         fill('pink');
+//     }else{
+//         fill('white');
+//     }
+// }
 
 // 普通きーkey
 // function keyTyped(){
@@ -42,10 +101,9 @@ function draw(){
 //     return false;
 // }
 
-
 // 色 グレースケール 0-225
 //RGB
-//HSB 
+//HSB
 
 //
 // colorMode(HSB,100);
@@ -89,15 +147,12 @@ function draw(){
 // rect(0,0,100,100);
 // pop();
 
-
-
 // // マウス操作関連
 // var r =50;
 // function setup(){
 //     //最初に一回だけ
 //     createCanvas(480,240);
 //     background('skyblue');
-    
 
 // }
 
@@ -118,8 +173,6 @@ function draw(){
 //     return false;//デフォルトの動作無効化←ブラウザによる誤作動防止
 // }
 
-
-
 // // キー入力 keyIsPressed
 // // keyTyped()　特殊キー無視した特定キー
 // // keyPressed()　大文字小文字区別しない
@@ -130,7 +183,6 @@ function draw(){
 //     //最初に一回だけ
 //     createCanvas(480,240);
 //     background('skyblue');
-    
 
 // }
 

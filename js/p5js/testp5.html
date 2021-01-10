@@ -5,17 +5,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>p5.JSを使ってみる</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <!-- font awsome読み込み -->
+    <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <article>
+    <article class="text-center mt-10 mx-auto">
 
-        <h1>p5.jsとは</h1>
-        <p>JavaScriptにProcessingが移植されたもの。Processingとは電子アートとビジュアルデザインのためのプログラミング言語です。</p>
-        <h3>↓p5.jsで描写しています↓</h3>
-        <p>マウスに合わせて円が動きます。キーボードでなにか文字を打つと色が一瞬付きます。</p>
+        <h1 class="text-2xl">p5.jsとは</h1>
+        <p>JavaScriptにProcessingが移植されたものです。Processingは電子アートとビジュアルデザインのためのプログラミング言語です。</p>
+        <h3 class="text-left font-bold my-4">↓p5.jsでコーヒー風の時計を描写しています。↓</h3>
+
+        <div class="text-cetner " id="canvas"></div>
+        <p class="text-left ">公式のサンプルを少しいじっただけです……</p>
     </article>
-
+    <footer class=" border-t-2 mt-20 p-5">
+        <p class="text-center mb-3">copyright 2020 usuyuki</p>
+        <!-- 私についてのリンクここから -->
+        <div class="info flex  mx-auto justify-center flex-wrap">
+            <!-- カードココから -->
+            <a href="https://usuyuki.github.io/laboratory_first/">
+                <div
+                    class=" items-center bg-b rounded bg-white text-gray-700  font-bold px-4 py-3 m-3 hover:text-white hover:bg-gray-700  duration-500">
+                    <p><i class="fas fa-home"></i> HOMEに戻る</p>
+                </div>
+            </a>
+            <!-- カードココまで -->
+            <a href="https://portfolio.usuyuki.net/">
+                <div
+                    class=" items-center bg-b rounded bg-white text-gray-700  font-bold px-4 py-3 m-3 hover:text-white hover:bg-gray-700 duration-500">
+                    <p><i class="fas fa-user-alt"></i>
+                        Author Portfolio</p>
+                </div>
+            </a>
+            <!-- カードココまで -->
+            <!-- カードココから -->
+            <a href="https://twitter.com/usuyuki26">
+                <div
+                    class=" items-center bg-b rounded bg-white text-gray-700  font-bold px-4 py-3 m-3 hover:text-white hover:bg-gray-700 duration-500">
+                    <p><i class="fab fa-twitter"></i>
+                        Author Twitter</p>
+                </div>
+            </a>
+            <!-- カードココまで -->
+            <!-- カードココから -->
+            <a href="https://github.com/Usuyuki">
+                <div
+                    class=" items-center bg-b rounded bg-white text-gray-700  font-bold px-4 py-3 m-3 hover:text-white hover:bg-gray-700 duration-500">
+                    <p><i class="fab fa-github"></i>
+                        Author GitHub</p>
+                </div>
+            </a>
+            <!-- カードココまで -->
+        </div>
+        <!-- 私についてのリンクここまで -->
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
     <script src="myscript.js"></script>
 
