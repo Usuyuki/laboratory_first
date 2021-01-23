@@ -137,6 +137,12 @@
                         <label for="dateOfView"
                             class="block mt-2 text-xs font-semibold text-gray-600 uppercase">閲覧日、時刻<span
                                 class="text-red-500 text-xs">(必須)</span></label>
+                        <button class="w-1/3 border-2 border-gray-200 rounded-2xl rounded
+                                 text-gray-600 
+                                focus:outline-none hover:bg-gray-700 hover:text-white duration-500"
+                            onclick="autoDate()">
+                            現在時刻を入れる
+                        </button>
                         <input id="dateOfView" type="dateOfView" name="dateOfView" placeholder="例:2021年1月6日11時47分"
                             autocomplete="date" class="block w-full py-3 px-1 mt-2 mb-4
                     text-gray-800 appearance-none 

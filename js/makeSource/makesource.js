@@ -87,3 +87,27 @@ function copyBook() {
 
   timeoutID = window.setTimeout(end, 2500);
 }
+
+function autoDate() {
+  var nowTime = new Date();
+
+  var nowYear = nowTime.getFullYear();
+  // getYearは2000年問題の関係で4桁返してくれないのでgetFullYearを使用
+  var nowMonth = nowTime.getMonth() + 1;
+  //getMonthは0~11で返ってくるので1足した
+  var nowDate = nowTime.getDate();
+  var nowHour = nowTime.getHours();
+  var nowMin = nowTime.getMinutes();
+  console.log("aaaa");
+  document.getElementById("dateOfView").value =
+    nowYear +
+    "年" +
+    nowMonth +
+    "月" +
+    nowDate +
+    "日" +
+    nowHour +
+    "時" +
+    nowMin +
+    "分";
+}
