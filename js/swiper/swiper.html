@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="レポートやスライドで参考文献などを記述する際にコピペできる出典生成ツールです。">
+    <title>出典の型生成ツール</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+    <!-- font awsome読み込み -->
+    <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- OGP設定 -->
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Swiperを使ってみる" />
+    <meta property="og:description" content="各所で使われてるSwiperを使ってみたくて。" />
+    <!-- <meta property="og:image" content="https://usuyuki.github.io/laboratory_first/img/thumbnail/exIndexMakeSource.jpg"> -->
+    <meta property="og:url" content="https://usuyuki.github.io/laboratory_first/js/swiper/swiper.html" />
+    <meta property="og:site_name" content="出典の型生成ツール" />
+
+    <meta name="twitter:site" content="@usuyuki26" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F6ZDMSQSQW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-F6ZDMSQSQW');
+    </script>
+    <!-- Googleアナリティクスここまで -->
+    <!-- SwiperのCDN -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="swiperStyle.css">
+</head>
+
+<body class="">
+
+    <header class=" border-b-2 relative ">
+        <div>
+
+            <h1 class="text-3xl text-center mt-4 text-gray-900 fontSpecialElite">Swiper使ってみる</h1>
+
+        </div>
+        <div class="text-right mr-10">
+
+        </div>
+    </header>
+    <main class=" pb-40">
+        <!-- スライダーのメインコンテナの div 要素 -->
+        <div class="swiper-container">
+            <!-- ラッパーの（スライドを囲む） div 要素 -->
+            <div class="swiper-wrapper">
+                <!-- それぞれのスライドの div 要素 -->
+                <div class="swiper-slide"><img src="../../img/swiper/coffeeProcess1.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="../../img/swiper/coffeeProcess2.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="../../img/swiper/coffeeProcess3.jpg" alt=""></div>
+
+            </div>
+            <!-- ページネーションの div 要素 -->
+            <div class="swiper-pagination"></div>
+
+            <!-- ナビゲーションボタンの div 要素-->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- スクロールバーの div 要素 -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+
+    </main>
+    <footer class=" border-t-2 mt-20 p-5">
+        <p class="text-center mb-3">copyright 2020 usuyuki</p>
+        <!-- 私についてのリンクここから -->
+        <div class="info flex  mx-auto justify-center flex-wrap">
+            <!-- カードココから -->
+            <a href="https://usuyuki.github.io/laboratory_first/">
+                <div
+                    class=" items-center bg-b rounded bg-white text-gray-700  font-bold px-4 py-3 m-3 hover:text-white hover:bg-gray-700  duration-500">
+                    <p><i class="fas fa-home"></i> HOMEに戻る</p>
+                </div>
+            </a>
+            <!-- カードココまで -->
+            <a href="https://portfolio.usuyuki.net/">
+                <div
+                    class=" items-center bg-b rounded bg-white text-gray-700  font-bold px-4 py-3 m-3 hover:text-white hover:bg-gray-700 duration-500">
+                    <p><i class="fas fa-user-alt"></i>
+                        Author Portfolio</p>
+                </div>
+            </a>
+            <!-- カードココまで -->
+            <!-- カードココから -->
+            <a href="https://twitter.com/usuyuki26">
+                <div
+                    class=" items-center bg-b rounded bg-white text-gray-700  font-bold px-4 py-3 m-3 hover:text-white hover:bg-gray-700 duration-500">
+                    <p><i class="fab fa-twitter"></i>
+                        Author Twitter</p>
+                </div>
+            </a>
+            <!-- カードココまで -->
+            <!-- カードココから -->
+            <a href="https://github.com/Usuyuki">
+                <div
+                    class=" items-center bg-b rounded bg-white text-gray-700  font-bold px-4 py-3 m-3 hover:text-white hover:bg-gray-700 duration-500">
+                    <p><i class="fab fa-github"></i>
+                        Author GitHub</p>
+                </div>
+            </a>
+            <!-- カードココまで -->
+        </div>
+        <!-- 私についてのリンクここまで -->
+    </footer>
+    <!-- SwipernoCDN -->
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+        var options = {
+            bottom: '32px', // default: '32px'
+            right: '32px', // default: '32px'
+            left: 'unset', // default: 'unset'
+            time: '0.5s', // default: '0.3s'
+            mixColor: '#fff', // default: '#fff'
+            backgroundColor: '#fff', // default: '#fff'
+            buttonColorDark: '#100f2c', // default: '#100f2c'
+            buttonColorLight: '#fff', // default: '#fff'
+            saveInCookies: true, // default: true,
+            label: '🌓' // default: ''
+        }
+
+        const darkmode = new Darkmode(options);
+        darkmode.showWidget();
+    </script>
+</body>
+
+</html>

@@ -31,7 +31,7 @@ function changeBookToSource() {
       : "";
   const page =
     document.getElementById("page").value !== ""
-      ? "ページ:" + document.getElementById("page").value + ","
+      ? document.getElementById("page").value + ","
       : "";
   const publishDate = document.getElementById("publishDate").value;
   let string =
@@ -42,7 +42,7 @@ function changeBookToSource() {
     titleOfPaper +
     volulme +
     page +
-    "閲覧日時:" +
+    "発行年:" +
     publishDate +
     "]";
   resultOfBook.innerHTML = string;
