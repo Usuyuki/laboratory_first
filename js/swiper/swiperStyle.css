@@ -11,8 +11,8 @@
 
 .swiper-wrapper {
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: 50%;
+  height: 50%;
   z-index: 1;
   display: flex;
   transition-property: transform;
@@ -21,8 +21,8 @@
 
 .swiper-slide {
   flex-shrink: 0;
-  width: 100%;
-  height: 100%;
+  width: 50%;
+  height: 50%;
   position: relative;
   transition-property: transform;
 }
