@@ -10,7 +10,7 @@
 
     <!-- font awsome読み込み -->
     <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="swiperStyle.css">
     <!-- OGP設定 -->
 
     <meta property="og:type" content="website" />
@@ -35,8 +35,8 @@
     </script>
     <!-- Googleアナリティクスここまで -->
     <!-- SwiperのCDN -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
-    <link rel="stylesheet" href="swiperStyle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
 
 <body class="">
@@ -51,29 +51,19 @@
 
         </div>
     </header>
-    <main class=" pb-40">
-        <!-- スライダーのメインコンテナの div 要素 -->
+    <main class="">
         <div class="swiper-container">
-            <!-- ラッパーの（スライドを囲む） div 要素 -->
             <div class="swiper-wrapper">
-                <!-- それぞれのスライドの div 要素 -->
-                <div class="swiper-slide"><img src="../../img/swiper/coffeeProcess1.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="../../img/swiper/coffeeProcess2.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="../../img/swiper/coffeeProcess3.jpg" alt=""></div>
-
+                <div class="swiper-slide slide-item bg-pink-500" style="min-height: 100vh;">Slide 1<br>←横へ</div>
+                <div class="swiper-slide slide-item bg-blue-500" style="min-height: 100vh;">Slide 2</div>
+                <div class="swiper-slide slide-item bg-green-500" style="min-height: 100vh;">Slide 3</div>
             </div>
-            <!-- ページネーションの div 要素 -->
-            <div class="swiper-pagination"></div>
-
-            <!-- ナビゲーションボタンの div 要素-->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-
-            <!-- スクロールバーの div 要素 -->
-            <div class="swiper-scrollbar"></div>
         </div>
 
     </main>
+    <script>
+        var mySwiper = new Swiper(".swiper-container", {});
+    </script>
     <footer class=" border-t-2 mt-20 p-5">
         <p class="text-center mb-3">copyright 2020 usuyuki</p>
         <!-- 私についてのリンクここから -->
@@ -117,6 +107,7 @@
     </footer>
     <!-- SwipernoCDN -->
     <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <script src="swiper.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
     <script>
         var options = {
